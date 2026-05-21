@@ -66,6 +66,32 @@
 - **Primary:** North Carolina & South Carolina
 - **Geographic Focus:** 6-location network across both states
 
+### Firm Brand Positioning (From Website)
+**Core Positioning:**
+- "Trial lawyer first approach" (emphasis on trial readiness, not just settlement)
+- "Coordinated legal team on every case" (multi-attorney collaboration model)
+- Professional, institutional authority
+- Results-focused (case statistics and settlements highlighted)
+
+**Brand Promise:**
+- Hands-on involvement from day one
+- Serious trial representation
+- Prepared for complex and high-stakes injury litigation
+- Coordinated team of attorneys working together
+
+**Website Tone:**
+- Professional but accessible
+- Direct and confident
+- Authority-based but not aggressive
+- Results-oriented, not sales-y
+
+**Primary CTAs:**
+- "Schedule a Free Consultation" (repeated throughout)
+- Blog content ("Insights & Firm Updates")
+- Contact form
+
+*(See `/strategy/firm-website/BRAND_POSITIONING_REFERENCE.md` for detailed analysis)*
+
 ---
 
 ## JASON'S SOCIAL MEDIA ACCOUNTS
