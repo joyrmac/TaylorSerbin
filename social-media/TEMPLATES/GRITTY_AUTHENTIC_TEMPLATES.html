@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason E. Taylor — Gritty Authentic Social Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f5f5;
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 3px solid #006838;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #01321D;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .philosophy {
+            background: #01321D;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .template-preview {
+            width: 100%;
+            aspect-ratio: 9 / 12;
+            background: #f0f0f0;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .template-preview img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .overlay.dark {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(1, 50, 29, 0.7) 100%);
+        }
+
+        .overlay.dark-heavy {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(1, 50, 29, 0.85) 100%);
+        }
+
+        .template-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            color: white;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .template-content h3 {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .template-content p {
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0.95;
+        }
+
+        .accent-bar {
+            width: 4px;
+            height: 40px;
+            background: #006838;
+        }
+
+        .alligator-logo-corner {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 48px;
+            opacity: 0.4;
+            z-index: 4;
+        }
+
+        .template-desc {
+            padding: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .template-desc h4 {
+            font-size: 18px;
+            color: #01321D;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .template-desc p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .template-specs {
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            margin-top: 12px;
+        }
+
+        .usage-tip {
+            background: #f9f9f9;
+            border-left: 4px solid #006838;
+            padding: 12px;
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 1px;
+            background: #ddd;
+            margin: 80px 0;
+        }
+
+        .guidelines {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        .guidelines h2 {
+            font-size: 24px;
+            color: #01321D;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        .guideline-group {
+            margin-bottom: 30px;
+        }
+
+        .guideline-group h3 {
+            font-size: 16px;
+            color: #006838;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .guideline-group ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .guideline-group li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .guideline-group li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #006838;
+            font-weight: bold;
+        }
+
+        .color-block {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .template-content h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jason E. Taylor — Gritty Authentic Templates</h1>
+            <p class="subtitle">
+                Raw, high-quality photography. Dark overlays for text. Alligator logo featured. Minimal text on image.
+                Captions do the heavy lifting. Real moments, not manufactured. This is Jason's life documented authentically.
+            </p>
+        </header>
+
+        <div class="philosophy">
+            <strong>Core Philosophy:</strong><br><br>
+            "High-quality but unpolished. Professional camera work, real backgrounds. Action over posed. In-the-moment over manufactured.
+            The alligator logo marks this as Jason's world. Dark green and black dominate. Text is minimal on image; the caption tells the story.
+            This isn't Instagram lifestyle marketing. This is a trial lawyer who rides, cooks, shoots, and lives his passions.
+            Documented honestly."
+        </div>
+
+        <h2 style="font-size: 28px; color: #01321D; margin-bottom: 40px; font-weight: 900;">
+            Six Core Templates
+        </h2>
+
+        <div class="templates-grid">
+            <!-- Template 1: Rider's Life -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=667&fit=crop');">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark-heavy"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                    <div class="template-content" style="gap: 0;">
+                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">200 Miles Today</div>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 1: Rider's Life</h4>
+                    <p><strong>Use:</strong> Action shots of Jason riding, local routes, motorcycle events, gear/maintenance moments</p>
+                    <p><strong>Style:</strong> Minimal text overlay. Alligator logo prominent (top right). Dark overlay. Headline only (max 20 words).</p>
+                    <p><strong>Caption carries story:</strong> "Just finished a 200-mile run through the mountains. Clean roads, good weather, better company. If you're riding tomorrow, check your mirrors. Physics doesn't negotiate."</p>
+                    <div class="usage-tip">
+                        ℹ️ Image is the hero. Keep text to one short line. Let the action speak.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 2: Alligator Wisdom -->
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #01321D 0%, #006838 100%);">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 120px; opacity: 0.08; z-index: 1;">🐊</div>
+                    <div class="template-content">
+                        <div class="accent-bar"></div>
+                        <h3 style="margin-top: 20px;">MOTORCYCLE INSURANCE:</h3>
+                        <p style="font-size: 15px;">50% of riders don't understand their deductible. Don't be them.</p>
+                        <p style="font-size: 13px; opacity: 0.85; margin-top: 10px;">Check your policy NOW. Don't find out after an accident.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 2: Alligator Wisdom</h4>
+                    <p><strong>Use:</strong> Legal tips, insurance info, rider safety, rights education</p>
+                    <p><strong>Style:</strong> Dark green background (no photo needed). Large alligator watermark (8% opacity). Green accent bar. White text.</p>
+                    <p><strong>Message:</strong> Direct, protective, expert but accessible. "I'm telling you this because I've seen what happens when people don't know."</p>
+                    <div class="usage-tip">
+                        ℹ️ No photo needed. Information-focused. Green accents. Bold headline. Direct body text.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 3: Gourmet Litigator (Recipe) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=667&fit=crop');">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                    <div class="template-content">
+                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Recipe</div>
+                        <h3 style="font-size: 24px;">Escargot</h3>
+                        <div class="accent-bar"></div>
+                        <p style="font-size: 13px;">Full recipe in caption</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 3: Gourmet Litigator</h4>
+                    <p><strong>Use:</strong> Recipes, cooking moments, plated dishes, kitchen storytelling</p>
+                    <p><strong>Style:</strong> Beautiful plated photo (60% of space). Dark overlay at bottom. Minimal text on image. Recipe details in caption.</p>
+                    <p><strong>Caption:</strong> Full recipe with ingredients and steps. Keep tone conversational: "This is something I've perfected over years. Here's how you do it..."</p>
+                    <div class="usage-tip">
+                        ℹ️ Food photography is hero. High-quality plating. Text minimal on image. Recipe in caption (searchable, shareable).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 4: Cigars & Five-Stand -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1581318282575-3fdfb6a20da8?w=500&h=667&fit=crop');">
+                    <img src="https://images.unsplash.com/photo-1581318282575-3fdfb6a20da8?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                    <div class="template-content" style="gap: 0;">
+                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Tournament Day</div>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 4: Cigars & Five-Stand</h4>
+                    <p><strong>Use:</strong> Shooting competition moments, cigar reviews, hobby lifestyle moments</p>
+                    <p><strong>Style:</strong> Action/lifestyle photo. Dark overlay. Minimal text. Alligator logo subtle.</p>
+                    <p><strong>Caption:</strong> Story + tie-back to courtroom mindset. "Tightest group of the day. Same principles apply in trial: controlled breathing, steady aim, no distractions."</p>
+                    <div class="usage-tip">
+                        ℹ️ Capture genuine moments. Not overly staged. Real people, real settings. Caption connects to Jason's life philosophy.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 5: Raw Lifestyle (Minimal Text) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1464219414306-cec08fb1170f?w=500&h=667&fit=crop');">
+                    <img src="https://images.unsplash.com/photo-1464219414306-cec08fb1170f?w=500&h=667&fit=crop" alt="">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 25px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(1, 50, 29, 0.8) 100%); z-index: 2;"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 5: Pure Lifestyle (No Text Overlay)</h4>
+                    <p><strong>Use:</strong> Powerful single-image moments. Let photo dominate completely.</p>
+                    <p><strong>Style:</strong> High-quality photo. Dark gradient at bottom only (for visibility if caption is in post). Minimal/no text on image itself.</p>
+                    <p><strong>Caption does everything:</strong> Story, context, emotion, tie-back to values.</p>
+                    <div class="usage-tip">
+                        ℹ️ Image speaks. Caption tells the story. The strongest template. Use when you have a killer photo.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 6: Direct + Dark -->
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #01321D 0%, #000 100%);">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 100px; opacity: 0.1; z-index: 1;">🐊</div>
+                    <div class="template-content">
+                        <h3 style="font-size: 22px; line-height: 1.3;">GOT IN AN ACCIDENT?</h3>
+                        <div class="accent-bar"></div>
+                        <p>Here's what to do in the first hour. And what NOT to do.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 6: Direct + Dark (Educational)</h4>
+                    <p><strong>Use:</strong> Safety tips, what-to-do guides, protective legal info</p>
+                    <p><strong>Style:</strong> Dark background (dark green + black gradient). Large alligator watermark (subtle). Bold headline. Green accent bar. White text.</p>
+                    <p><strong>Message tone:</strong> "I'm protecting you. Here's what to do because I've seen what happens when people don't."</p>
+                    <div class="usage-tip">
+                        ℹ️ No photo. Dark, serious aesthetic. Headline + accent. Caption carries the detailed steps/advice.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="guidelines">
+            <h2>Design Guidelines</h2>
+
+            <div class="guideline-group">
+                <h3>Photography Standards</h3>
+                <ul>
+                    <li><strong>High-quality:</strong> Professional camera or high-end phone camera. Good lighting.</li>
+                    <li><strong>Raw aesthetic:</strong> Not overly filtered or polished. Real office lighting, real road conditions, real kitchen vibes.</li>
+                    <li><strong>Action over pose:</strong> Capture Jason doing things, not standing for the camera.</li>
+                    <li><strong>In-the-moment:</strong> Authentic moments from real rides, real cooking, real events.</li>
+                    <li><strong>Real backgrounds:</strong> Actual roads, actual kitchen, actual shooting range—not studio setup.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Color Palette (For All Templates)</h3>
+                <ul>
+                    <li><span class="color-block" style="background: #006838;"></span><strong>Primary Green #006838</strong> — Accent bars, highlights, logo color</li>
+                    <li><span class="color-block" style="background: #01321D;"></span><strong>Dark Green #01321D</strong> — Primary background, overlays, serious content</li>
+                    <li><span class="color-block" style="background: #000000;"></span><strong>Black #000000</strong> — Text, depth, contrast</li>
+                    <li><span class="color-block" style="background: #FFFFFF;"></span><strong>White #FFFFFF</strong> — Text on dark, breathing room</li>
+                    <li><strong>NO bright yellow.</strong> Save any accent color for only critical CTAs (phone number when needed).</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Typography</h3>
+                <ul>
+                    <li><strong>Headlines:</strong> Nunito Sans 900 (Bold), 24-32pt, white or light green text on dark</li>
+                    <li><strong>Body text:</strong> Nunito Sans 400 (Regular), 14-16pt, white on dark overlay</li>
+                    <li><strong>Minimal text on image:</strong> Max 1-2 short lines. Let photo breathe.</li>
+                    <li><strong>Captions in post:</strong> 2-4 sentences. Direct, conversational, Jason's voice.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Alligator Logo Usage</h3>
+                <ul>
+                    <li><strong>Placement:</strong> Top right corner (subtle) or watermark at 6-8% opacity across background</li>
+                    <li><strong>Purpose:</strong> Marks this as "The Litigator" brand. Distinct from firm branding.</li>
+                    <li><strong>Visibility:</strong> Should be visible but not dominating. It's a brand mark, not a decoration.</li>
+                    <li><strong>Consistency:</strong> Use same logo size/placement across template type.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Text Overlay Rules</h3>
+                <ul>
+                    <li><strong>Dark overlays required:</strong> 60-80% opacity dark green or black at bottom of photo-based posts (ensures text readability)</li>
+                    <li><strong>Accent bar always:</strong> 4px green bar for visual anchor (left side or top)</li>
+                    <li><strong>Keep it short:</strong> One headline, max 2-3 lines. Caption does the storytelling.</li>
+                    <li><strong>White text on dark:</strong> Always. Black text on light backgrounds only for text-only templates.</li>
+                    <li><strong>Mobile first:</strong> All text readable on 4-inch phone screen. No tiny fonts.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Caption Strategy (The Heavy Lifting)</h3>
+                <ul>
+                    <li><strong>Captions are where the story lives.</strong> Image sets mood, caption tells the truth.</li>
+                    <li><strong>Jason's voice:</strong> Direct, honest, conversational. Like talking over a cigar.</li>
+                    <li><strong>2-4 sentences max.</strong> Mobile users scrolling fast. Grab attention, tell truth, move on.</li>
+                    <li><strong>Connect to values:</strong> Rider safety tips → "I've seen accidents." Cooking → "This is how I do it." Shooting → "Same discipline as trial."</li>
+                    <li><strong>No corporate speak.</strong> "Just rolled in from a ride" not "Completed motorcycle excursion experience"</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>What Makes These Templates "Gritty"</h3>
+                <ul>
+                    <li><strong>Raw photography:</strong> Not Instagram-filtered. Real lighting, real shadows, real imperfection.</li>
+                    <li><strong>Minimal design:</strong> Text gets out of the way. Photo and caption do the work.</li>
+                    <li><strong>Dark aesthetic:</strong> Dark green and black dominate. Serious, protective, trustworthy.</li>
+                    <li><strong>No fluff:</strong> No rounded corners, no gradients, no decorative elements. Professional and direct.</li>
+                    <li><strong>Alligator featured:</strong> This marks it as Jason's brand, distinct from corporate.</li>
+                    <li><strong>Authentic moments:</strong> Real action, not posed. Real life documented.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Common Template Sizes</h3>
+                <ul>
+                    <li><strong>Instagram Feed Post:</strong> 1080x1350 (vertical)</li>
+                    <li><strong>Instagram Story/Reel:</strong> 1080x1920 (full vertical)</li>
+                    <li><strong>Facebook Post:</strong> 1200x1500 (vertical) or 1200x628 (horizontal)</li>
+                    <li><strong>LinkedIn Post:</strong> 1200x627 (horizontal)</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Brand Voice Checklist</h3>
+                <ul>
+                    <li>✅ <strong>Authentic:</strong> Real moment from real life</li>
+                    <li>✅ <strong>Gritty:</strong> Raw, unpolished, high-quality</li>
+                    <li>✅ <strong>Direct:</strong> Straight talk, no corporate jargon</li>
+                    <li>✅ <strong>Expert but accessible:</strong> Jason knows his stuff, shares honestly</li>
+                    <li>✅ <strong>Alligator branded:</strong> Logo visible, distinctive, marks this as personal brand</li>
+                    <li>✅ <strong>Protective:</strong> "I'm looking out for you" energy</li>
+                    <li>✅ <strong>Community:</strong> Member of motorcycle/lifestyle communities, not marketing to them</li>
+                    <li>❌ <strong>NOT:</strong> Corporate polish, manufactured moments, fake lifestyle, hard-sell legal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

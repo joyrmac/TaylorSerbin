@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason E. Taylor — Gritty Edge Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 4px solid #006838;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .philosophy {
+            background: linear-gradient(135deg, #01321D 0%, #000 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 0;
+            margin-bottom: 60px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border-left: 6px solid #006838;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy::before {
+            content: "🐊";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 200px;
+            opacity: 0.08;
+        }
+
+        .philosophy strong {
+            color: #006838;
+            font-weight: 900;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .template-card {
+            background: transparent;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: scale(1.02);
+        }
+
+        .template-preview {
+            width: 100%;
+            aspect-ratio: 9 / 12;
+            background: #1a1a1a;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #006838;
+        }
+
+        .template-preview img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* Film grain effect */
+        .template-preview::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.03),
+                    rgba(0, 0, 0, 0.03) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+            pointer-events: none;
+            z-index: 4;
+            mix-blend-mode: overlay;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .overlay.dark-aggressive {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(1, 50, 29, 0.9) 80%, rgba(0, 0, 0, 0.95) 100%);
+        }
+
+        .overlay.dark-solid {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .template-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            color: white;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .template-content h3 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .template-content p {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .accent-bar {
+            width: 6px;
+            height: 50px;
+            background: #006838;
+            margin-right: 0;
+        }
+
+        .accent-bar-top {
+            width: 100%;
+            height: 6px;
+            background: #006838;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        .alligator-logo-corner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 64px;
+            opacity: 0.25;
+            z-index: 4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .alligator-logo-large {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 80px;
+            opacity: 0.15;
+            z-index: 2;
+        }
+
+        .template-desc {
+            padding: 30px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-top: none;
+        }
+
+        .template-desc h4 {
+            font-size: 18px;
+            color: #006838;
+            margin-bottom: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .template-desc p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .usage-tip {
+            background: linear-gradient(90deg, rgba(0, 104, 56, 0.2) 0%, transparent 100%);
+            border-left: 4px solid #006838;
+            padding: 15px;
+            font-size: 13px;
+            color: #aaa;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, #006838 0%, transparent 100%);
+            margin: 80px 0;
+        }
+
+        .guidelines {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 50px;
+            border-radius: 0;
+            margin-bottom: 60px;
+            border: 2px solid #006838;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guidelines::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 104, 56, 0.05),
+                    rgba(0, 104, 56, 0.05) 2px,
+                    transparent 2px,
+                    transparent 4px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .guidelines > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .guidelines h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .guideline-group {
+            margin-bottom: 40px;
+        }
+
+        .guideline-group h3 {
+            font-size: 18px;
+            color: #006838;
+            margin-bottom: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guideline-group ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .guideline-group li {
+            margin-bottom: 14px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #bbb;
+        }
+
+        .guideline-group li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #006838;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .color-block {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 2px;
+            margin-right: 12px;
+            vertical-align: middle;
+            border: 2px solid #444;
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .edge-note {
+            background: linear-gradient(90deg, rgba(0, 104, 56, 0.15) 0%, transparent 100%);
+            border: 2px solid #006838;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 0;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .template-content h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jason E. Taylor — Gritty Edge</h1>
+            <p class="subtitle">
+                Raw. Textured. Dark. Street-level energy. Film grain visible. Sharp color blocking. Aggressive typography.
+                Alligator-branded. This isn't polished. This is real.
+            </p>
+        </header>
+
+        <div class="philosophy">
+            <strong>Philosophy:</strong><br><br>
+            "Motorcycle bar aesthetics. Garage vibes. Real photos with film grain and texture. Dark overlays that feel dangerous.
+            Sharp color transitions, not smooth gradients. Aggressive typography. Alligator logo featured. No corporate polish.
+            No Instagram smoothness. This is a trial lawyer's world. Raw. Authentic. Gritty. Every pixel has edge."
+        </div>
+
+        <h2 style="font-size: 32px; color: #fff; margin-bottom: 50px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">
+            Six Core Templates (With Edge)
+        </h2>
+
+        <div class="templates-grid">
+            <!-- Template 1: Rider's Life (Raw) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=667&fit=crop');">
+                    <div class="accent-bar-top"></div>
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark-aggressive"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                    <div class="template-content">
+                        <h3>200 MILES</h3>
+                        <p>Mountains. Roads. Real.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 1: Rider's Life</h4>
+                    <p><strong>Use:</strong> Action motorcycle shots. Real riding moments. Roads. Community events.</p>
+                    <p><strong>Edge:</strong> Top green bar. Dark aggressive overlay. Alligator logo visible. Film grain texture visible. Minimal text.</p>
+                    <p><strong>Caption:</strong> "Just rolled in from 200 miles through the mountains. Clean roads, good weather, better company. If you're riding tomorrow, check your brakes first. Physics doesn't care about excuses."</p>
+                    <div class="usage-tip">
+                        ℹ️ Photo IS the content. Grain and texture visible. Dark overlay punches. Minimal text lets image dominate.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 2: Alligator Wisdom (Pure Aggression) -->
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #000 0%, #01321D 50%, #006838 100%);">
+                    <div class="accent-bar-top"></div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 140px; opacity: 0.1; z-index: 1;">🐊</div>
+                    <div class="template-content">
+                        <h3>MOTORCYCLE INSURANCE</h3>
+                        <div class="accent-bar"></div>
+                        <p>Your deductible is probably higher than you think.</p>
+                        <p style="font-size: 13px; margin-top: 10px; opacity: 0.9;">Check it NOW. Don't find out after.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 2: Alligator Wisdom</h4>
+                    <p><strong>Use:</strong> Legal tips. Insurance info. Safety warnings. Educational content.</p>
+                    <p><strong>Edge:</strong> Bold dark gradient background (black to green). Large hidden alligator watermark. Accent bar. Sharp typography.</p>
+                    <p><strong>Message:</strong> Protective. Direct. "I'm telling you this because I've seen people get screwed."</p>
+                    <div class="usage-tip">
+                        ℹ️ No photo needed. Dark gradient from black to green. Bold headline. Accent bar. Hard-hitting info.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 3: Gourmet (Raw Kitchen) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=667&fit=crop');">
+                    <div class="accent-bar-top"></div>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark-solid"></div>
+                    <div class="alligator-logo-large">🐊</div>
+                    <div class="template-content">
+                        <h3>ESCARGOT</h3>
+                        <p>This is how I do it.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 3: Gourmet Litigator</h4>
+                    <p><strong>Use:</strong> Recipes. Cooking photos. Kitchen moments. Food stories.</p>
+                    <p><strong>Edge:</strong> Real food photography (imperfect lighting). Dark overlay. Bold headline. Alligator watermark subtle. Raw aesthetic.</p>
+                    <p><strong>Caption:</strong> Full recipe with ingredients and method. "This is something I've perfected over 30 years. Here's how to do it right."</p>
+                    <div class="usage-tip">
+                        ℹ️ High-quality but raw. Real kitchen lighting, not studio. Dark overlay. Alligator watermark large but subtle.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 4: Cigars & Shooting (Lifestyle) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1581318282575-3fdfb6a20da8?w=500&h=667&fit=crop');">
+                    <div class="accent-bar-top"></div>
+                    <img src="https://images.unsplash.com/photo-1581318282575-3fdfb6a20da8?w=500&h=667&fit=crop" alt="">
+                    <div class="overlay dark-aggressive"></div>
+                    <div class="alligator-logo-corner">🐊</div>
+                    <div class="template-content">
+                        <h3>TOURNAMENT DAY</h3>
+                        <p>Controlled breathing. Steady aim. No distractions.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 4: Cigars & Five-Stand</h4>
+                    <p><strong>Use:</strong> Hobby moments. Shooting competitions. Cigar lounge nights. Real lifestyle.</p>
+                    <p><strong>Edge:</strong> Action/captured moment (not posed). Dark overlay. Alligator logo. Bold headline. Tie-back to trial mindset in caption.</p>
+                    <p><strong>Caption:</strong> "Tightest group of the day. Same principles apply in the courtroom: controlled breathing, steady aim, no distractions. Everything matters."</p>
+                    <div class="usage-tip">
+                        ℹ️ Captured moment, not posed. Dark overlay. Alligator visible. Connect hobby back to trial advocacy.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 5: Pure Image (Maximum Impact) -->
+            <div class="template-card">
+                <div class="template-preview" style="background-image: url('https://images.unsplash.com/photo-1464219414306-cec08fb1170f?w=500&h=667&fit=crop');">
+                    <div class="accent-bar-top"></div>
+                    <img src="https://images.unsplash.com/photo-1464219414306-cec08fb1170f?w=500&h=667&fit=crop" alt="">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(1, 50, 29, 0.7) 100%); z-index: 2;"></div>
+                    <div class="alligator-logo-corner" style="opacity: 0.2;">🐊</div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 5: Pure Impact</h4>
+                    <p><strong>Use:</strong> When you have a killer photo. Powerful single moment. Minimal text needed.</p>
+                    <p><strong>Edge:</strong> Top green bar. No text overlay (or minimal). Dark gradient at bottom only. Let photo dominate completely.</p>
+                    <p><strong>Caption does everything:</strong> Story, context, emotion, tie-back to values. "Just rode 200 miles. Cleared my head. This is where I find clarity."</p>
+                    <div class="usage-tip">
+                        ℹ️ Image IS the message. Photo matters most. Caption tells the story. Most powerful template.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 6: Direct + Protective (Educational) -->
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #01321D 0%, #000 50%, #01321D 100%);">
+                    <div class="accent-bar-top"></div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 120px; opacity: 0.08; z-index: 1;">🐊</div>
+                    <div class="template-content">
+                        <h3>YOU GOT IN AN ACCIDENT</h3>
+                        <div class="accent-bar"></div>
+                        <p>Here's what to do. Here's what NOT to do.</p>
+                    </div>
+                </div>
+                <div class="template-desc">
+                    <h4>Template 6: Direct + Protective</h4>
+                    <p><strong>Use:</strong> "What to do" guides. Safety tips. Rights education. Protective messaging.</p>
+                    <p><strong>Edge:</strong> Dark gradient (no photo). Large hidden alligator watermark. Accent bar. Bold, urgent headline.</p>
+                    <p><strong>Message tone:</strong> Protective authority. "I'm looking out for you. Here's what to actually do."</p>
+                    <div class="usage-tip">
+                        ℹ️ No photo. Dark gradient. Alligator watermark. Urgent headline. Caption carries the detailed steps.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="guidelines">
+            <h2>Gritty Design Rules</h2>
+
+            <div class="guideline-group">
+                <h3>Photography (The Foundation)</h3>
+                <ul>
+                    <li><strong>Professional quality:</strong> Good camera, good light. But NOT polished.</li>
+                    <li><strong>Real backgrounds:</strong> Actual roads, actual kitchens, actual ranges. Not studio setup.</li>
+                    <li><strong>Film grain visible:</strong> Slight noise/grain visible in image. Shows authenticity, not over-processed.</li>
+                    <li><strong>Action > Pose:</strong> Jason riding, Jason cooking, Jason shooting. Not standing for camera.</li>
+                    <li><strong>Raw lighting:</strong> Harsh shadows OK. Real office lighting OK. Imperfect is better than polished.</li>
+                    <li><strong>In-the-moment capture:</strong> Not styled. Not manufactured. Not retouched to death.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Overlays & Texture</h3>
+                <ul>
+                    <li><strong>Film grain effect:</strong> Every template has subtle horizontal grain overlay (80-120% opacity on canvas)</li>
+                    <li><strong>Dark aggressive overlays:</strong> 70-90% opacity for photo-based posts. Make it DARK so text pops.</li>
+                    <li><strong>Gradient overlays:</strong> Sharp transitions (black to green, not smooth fades). Feels more dangerous.</li>
+                    <li><strong>Top accent bar:</strong> 6px solid green bar at top of every post. Non-negotiable brand mark.</li>
+                    <li><strong>Visible texture:</strong> Grain is VISIBLE, not hidden. Shows rawness, not polish.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Color Palette (Dark & Sharp)</h3>
+                <ul>
+                    <li><span class="color-block" style="background: #006838;"></span><strong>Sharp Green #006838</strong> — Accent bar, highlights, borders. Used sharply, not softly.</li>
+                    <li><span class="color-block" style="background: #01321D;"></span><strong>Dark Green #01321D</strong> — Overlays, backgrounds. The base of grit.</li>
+                    <li><span class="color-block" style="background: #000000;"></span><strong>Black #000000</strong> — Deep overlays, hard contrast, edge. Used aggressively.</li>
+                    <li><span class="color-block" style="background: #FFFFFF;"></span><strong>White #FFFFFF</strong> — Text on dark ONLY. Must have hard contrast.</li>
+                    <li><strong>ZERO bright yellow.</strong> Not Jason's aesthetic. Save any yellow for only emergency CTAs.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Typography (Aggressive)</h3>
+                <ul>
+                    <li><strong>Headlines:</strong> Nunito Sans 900 weight. 28-36pt minimum. ALL CAPS. Letter-spacing -1px (tight). White on dark.</li>
+                    <li><strong>Body text:</strong> Nunito Sans 400 weight. 13-15pt. White on dark overlay. Line height 1.5+.</li>
+                    <li><strong>Minimal text on image:</strong> Max 2 short lines. Let image breathe. Captions carry heavy lifting.</li>
+                    <li><strong>No rounded corners on text.</strong> Sharp edges. Aggressive. Street-level, not friendly.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Alligator Logo Usage</h3>
+                <ul>
+                    <li><strong>Placement:</strong> Top right corner (25% opacity) OR large watermark background (8-10% opacity)</li>
+                    <li><strong>Size:</strong> Large enough to be distinctive. Not tiny. Not hidden.</li>
+                    <li><strong>Opacity:</strong> 8-25% depending on context. Visible but not dominating.</li>
+                    <li><strong>Every post gets it.</strong> It's the brand. It's the mark. Make it consistent.</li>
+                    <li><strong>Sharp edges:</strong> No soft halos. Clean, direct logo placement.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Design Principles (The Edge)</h3>
+                <ul>
+                    <li>✅ <strong>Texture visible:</strong> Film grain, rough edges, imperfections. That's the grit.</li>
+                    <li>✅ <strong>High contrast:</strong> Light text on very dark overlay. No muddy middle ground.</li>
+                    <li>✅ <strong>Sharp transitions:</strong> Color blocks instead of soft gradients. Black to green, not fade to fade.</li>
+                    <li>✅ <strong>Aggressive typography:</strong> Bold, caps, tight letter-spacing. Not friendly. Street-level.</li>
+                    <li>✅ <strong>Real imperfections:</strong> Grain visible. Shadows harsh. Lighting uneven. Shows authenticity.</li>
+                    <li>✅ <strong>Alligator featured:</strong> Not hidden. This is Jason's brand. Make it VISIBLE.</li>
+                    <li>✅ <strong>No polish:</strong> This isn't Instagram. This is a motorcycle bar. Raw and real.</li>
+                    <li>❌ <strong>NOT:</strong> Smooth gradients, soft edges, Instagram filters, rounded corners, "friendly" fonts, bright colors</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Caption Strategy (The Story)</h3>
+                <ul>
+                    <li><strong>Image sets mood. Caption tells truth.</strong> Work together, but caption carries weight.</li>
+                    <li><strong>Jason's voice:</strong> Direct, gritty, honest. "Just rolled in from 200 miles" not "Completed bicycle excursion"</li>
+                    <li><strong>2-4 sentences max.</strong> Mobile scroll is fast. Hit hard and move on.</li>
+                    <li><strong>Connect to values:</strong> Rider safety → "I've seen accidents." Cooking → "This is how I do it." Shooting → "Same discipline as trial."</li>
+                    <li><strong>Street-level energy:</strong> Bar-conversation tone. Peer advice, not lecturing.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>What Makes This "Gritty Edge"</h3>
+                <ul>
+                    <li><strong>Visible texture:</strong> Film grain overlay creates rawness, not smoothness</li>
+                    <li><strong>Dark overlays:</strong> 70-90% opacity makes photos feel serious, dangerous, intense</li>
+                    <li><strong>Sharp color blocking:</strong> Transitions are hard (black → green), not soft fades</li>
+                    <li><strong>Aggressive typography:</strong> All caps, tight letters, bold weight. Not friendly.</li>
+                    <li><strong>Alligator featured:</strong> 8-25% watermark visible. This is Jason's brand, not corporate.</li>
+                    <li><strong>Top green bar:</strong> 6px border at top. Non-negotiable. Consistent. Sharp.</li>
+                    <li><strong>Real imperfection:</strong> Harsh lighting, visible grain, uneven edges. Shows authenticity.</li>
+                    <li><strong>Street aesthetic:</strong> Motorcycle bar, not Instagram. Raw, not polished. Real, not manufactured.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Image Sizes</h3>
+                <ul>
+                    <li><strong>Instagram Feed:</strong> 1080x1350 (vertical)</li>
+                    <li><strong>Instagram Story/Reel:</strong> 1080x1920 (full vertical)</li>
+                    <li><strong>Facebook:</strong> 1200x1500 (vertical) or 1200x628 (horizontal)</li>
+                    <li><strong>All formats:</strong> Top green bar 6px, consistent overlay, alligator logo consistent placement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edge-note">
+            🐊 <strong>The Core:</strong> This isn't a design system for Instagram perfectionists. This is for a trial lawyer
+            who rides motorcycles, cooks escargot, shoots clay, and fights for his clients. Raw. Gritty. Real. Textured. Dark.
+            The alligator brand is visible. The grain is visible. The edge is visible. That's the point.
+        </div>
+    </div>
+</body>
+</html>

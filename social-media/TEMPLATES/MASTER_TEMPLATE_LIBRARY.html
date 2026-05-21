@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor | Serbin — Master Template Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 50px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            border-bottom: 6px solid #006838;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 52px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #999;
+            max-width: 950px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-header {
+            font-size: 32px;
+            color: #fff;
+            margin: 80px 0 50px 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            border-bottom: 3px solid #006838;
+            padding-bottom: 20px;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .template-card {
+            background: transparent;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .template-preview {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 12;
+            overflow: hidden;
+            background: #000;
+            border: 3px solid #006838;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .template-info {
+            padding: 40px;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-top: none;
+        }
+
+        .template-info h4 {
+            font-size: 18px;
+            color: #006838;
+            margin-bottom: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .template-info h5 {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 12px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .template-info p {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .design-approach {
+            background: rgba(0, 104, 56, 0.1);
+            border-left: 4px solid #006838;
+            padding: 15px;
+            font-size: 12px;
+            color: #999;
+            margin-top: 18px;
+            font-weight: 500;
+        }
+
+        .color-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border: 1px solid #444;
+        }
+
+        .divider {
+            height: 4px;
+            background: linear-gradient(90deg, #006838 0%, transparent 100%);
+            margin: 100px 0;
+        }
+
+        .legend {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 50px;
+            margin-bottom: 80px;
+            border: 3px solid #006838;
+            border-left: 8px solid #006838;
+        }
+
+        .legend h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .legend-group {
+            margin-bottom: 30px;
+        }
+
+        .legend-group h3 {
+            font-size: 16px;
+            color: #006838;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .legend-group p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .approach-box {
+            background: rgba(0, 104, 56, 0.08);
+            border-left: 4px solid #006838;
+            padding: 18px;
+            margin: 18px 0;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .approach-box strong {
+            color: #006838;
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .section-header {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taylor | Serbin Master Template Library</h1>
+            <p class="subtitle">
+                Complete social media template system. Six content types × 2-3 design variations each.
+                Lifestyle, educational, testimonials, case results, practice areas, attorney spotlights.
+                Ready for Canva or Adobe production.
+            </p>
+        </header>
+
+        <div class="legend">
+            <h2>Template System Overview</h2>
+
+            <div class="legend-group">
+                <h3>Design Approaches (Applied Across All Types)</h3>
+                <div class="approach-box">
+                    <strong>Approach A: Kompace Style</strong><br>
+                    Bold organic color blocks (green #006838 + dark backgrounds). Geometric shapes (circles, lines). Clean photo integration. Structured-but-flowing. Jason's lifestyle focused.
+                </div>
+                <div class="approach-box">
+                    <strong>Approach B: High-Contrast Bold</strong><br>
+                    Solid color blocking (dark + bright accents). High-impact typography. Repeating geometric elements. Badges/circles for emphasis. Very direct, aggressive feel.
+                </div>
+                <div class="approach-box">
+                    <strong>Approach C: Minimal Modern</strong><br>
+                    Clean layouts. Generous white space. Green accents strategic. Simple geometric shapes. Approachable but professional. Works for legal/firm content.
+                </div>
+            </div>
+
+            <div class="legend-group">
+                <h3>Content Types (6 Major Categories)</h3>
+                <p>• <strong>Lifestyle/Personal:</strong> Rider's Life, Gourmet, Hobbies (Jason's personal brand)</p>
+                <p>• <strong>Educational/Carousel:</strong> How-to guides, tips, lists, multi-slide information</p>
+                <p>• <strong>Announcements:</strong> News, updates, events, new services</p>
+                <p>• <strong>Testimonials:</strong> Client reviews, social proof, success stories</p>
+                <p>• <strong>Case Results:</strong> Settlement amounts, verdicts, case outcomes</p>
+                <p>• <strong>Practice Areas:</strong> Motorcycle accidents, workers comp, car accidents, wrongful death</p>
+                <p>• <strong>Attorney Spotlights:</strong> Jason, Larry, team introduction</p>
+            </div>
+
+            <div class="legend-group">
+                <h3>Color System (Consistent Across All)</h3>
+                <p>
+                    <span class="color-indicator" style="background: #006838;"></span> Primary Green #006838 (accents, highlights)
+                    <br>
+                    <span class="color-indicator" style="background: #01321D;"></span> Dark Green #01321D (backgrounds)
+                    <br>
+                    <span class="color-indicator" style="background: #000000;"></span> Black #000000 (depth, text)
+                    <br>
+                    <span class="color-indicator" style="background: #FFFFFF;"></span> White #FFFFFF (text on dark)
+                </p>
+            </div>
+        </div>
+
+        <!-- SECTION 1: LIFESTYLE/PERSONAL -->
+        <h2 class="section-header">Section 1: Lifestyle & Personal (Jason's Brand)</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">Rider's Life, Gourmet Litigator, Cigars & Five-Stand. Raw, authentic, in-the-moment. 2-3 design options per pillar.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview">
+                    <img class="preview-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop" alt="Rider's Life Template A">
+                </div>
+                <div class="template-info">
+                    <h4>Rider's Life (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Action motorcycle shots, real riding moments, road scenes, community events</p>
+                    <p><strong>Design:</strong> Bold green block (left 30%), photo on right. Alligator logo in circle. Minimal text overlay.</p>
+                    <p><strong>Tone:</strong> Raw energy. Peer-level. "I ride, you ride, we get it."</p>
+                    <div class="design-approach">
+                        💡 Green block + photo split. Organic circle logo. Minimal text. High-quality action photo dominates.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview">
+                    <img class="preview-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop" alt="Rider's Life Template B">
+                </div>
+                <div class="template-info">
+                    <h4>Rider's Life (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Dramatic action moments, intense riding scenes, community highlights</p>
+                    <p><strong>Design:</strong> Full bleed photo + dark overlay. Bold white/green text. Geometric accent lines. Alligator badge.</p>
+                    <p><strong>Tone:</strong> Aggressive. Direct. "This is real."</p>
+                    <div class="design-approach">
+                        💡 Full photo + heavy overlay. Bold typography. Geometric accents. High contrast. Very street-level.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview">
+                    <img class="preview-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop" alt="Rider's Life Template C">
+                </div>
+                <div class="template-info">
+                    <h4>Rider's Life (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Everyday riding, casual moments, community connection</p>
+                    <p><strong>Design:</strong> Clean photo. Light green border (top/left). Simple headline. Lots of white space. Subtle alligator watermark.</p>
+                    <p><strong>Tone:</strong> Accessible. Approachable. Clean but with edge.</p>
+                    <div class="design-approach">
+                        💡 Clean layout. Green border accent. Generous white space. Simple, direct. Professional but raw.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: EDUCATIONAL/CAROUSEL -->
+        <h2 class="section-header">Section 2: Educational & Carousel Posts</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">How-to guides, tips, lists, multi-slide information. Good for both Jason's brand and firm brand.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #01321D 0%, #000 100%); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 48px; color: #006838; margin-bottom: 20px; font-weight: 900;">01</div>
+                    <div style="font-size: 24px; color: #fff; font-weight: 900; margin-bottom: 15px;">MOTORCYCLE ACCIDENT?</div>
+                    <div style="font-size: 14px; color: #aaa;">Swipe for what to do →</div>
+                </div>
+                <div class="template-info">
+                    <h4>Educational Carousel (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> 5-7 slide carousels. "What to do" guides. Safety tips. Educational content.</p>
+                    <p><strong>Design:</strong> Dark green background. Large green number/icon per slide. Bold headline. 1 tip per slide. Swipe cue on first slide.</p>
+                    <p><strong>Best for:</strong> Rider rights, motorcycle insurance, workplace safety, accident protocol</p>
+                    <div class="design-approach">
+                        💡 Numbered slides (01, 02, 03...). One tip per slide. Green accents. Dark background. Very scannable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(90deg, #000 0%, #006838 50%, #000 100%); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 20px; color: #fff; font-weight: 900; margin-bottom: 20px; letter-spacing: 2px;">SWIPE FOR TIPS</div>
+                    <div style="font-size: 32px; color: #006838; font-weight: 900;">→ → →</div>
+                    <div style="font-size: 14px; color: #aaa; margin-top: 20px;">Slide through to learn</div>
+                </div>
+                <div class="template-info">
+                    <h4>Educational Carousel (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Listicle carousels. "Top 5" posts. Numbered guides. Quick tips.</p>
+                    <p><strong>Design:</strong> Black background with green accent bands. Large green arrows/numbers. Bold typography. High contrast.</p>
+                    <p><strong>Best for:</strong> Quick tips, checklists, "do/don't" lists, countdown posts</p>
+                    <div class="design-approach">
+                        💡 Arrows or numbers in green. Bold typography. Simple background. Very attention-grabbing. Easy to swipe through.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                    <div style="width: 40px; height: 40px; background: #006838; border-radius: 50%; margin-bottom: 20px;"></div>
+                    <div style="font-size: 18px; color: #01321D; font-weight: 900; margin-bottom: 15px;">AFTER AN ACCIDENT</div>
+                    <div style="font-size: 12px; color: #666; line-height: 1.8; max-width: 100%;">
+                        <strong>DO:</strong><br>
+                        • Get medical attention<br>
+                        • Document everything<br><br>
+                        <strong>DON'T:</strong><br>
+                        • Talk to their insurance<br>
+                        • Post on social media
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Educational Carousel (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Clean, professional educational content. Guidelines. Best practices.</p>
+                    <p><strong>Design:</strong> Light background (white/cream). Green circle bullets. Simple typography. Clean organization. Professional but approachable.</p>
+                    <p><strong>Best for:</strong> Law-adjacent tips, professional advice, serious educational content</p>
+                    <div class="design-approach">
+                        💡 Light background. Green circles/bullets. Clean layout. Professional but accessible. Works for firm brand.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: ANNOUNCEMENTS -->
+        <h2 class="section-header">Section 3: Announcements & News</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">New services, events, office updates, team news, partnerships.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #006838 0%, #01321D 100%); padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">ANNOUNCEMENT</div>
+                    <div style="font-size: 36px; color: #fff; font-weight: 900; margin-bottom: 15px; line-height: 1.2;">NEW CHARLOTTE OFFICE OPEN</div>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.9);">Serving the Carolinas with expanded capacity</div>
+                </div>
+                <div class="template-info">
+                    <h4>Announcement (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Major announcements, office openings, new services, milestones</p>
+                    <p><strong>Design:</strong> Gradient green background. Bold white headline. Centered layout. Minimal text. Alligator watermark optional.</p>
+                    <p><strong>Tone:</strong> Professional but exciting. "Big news here."</p>
+                    <div class="design-approach">
+                        💡 Gradient green background. Bold headline. Center-focused. Clean and impactful.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #000; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border-left: 20px solid #006838;">
+                    <div style="font-size: 12px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 20px;">BREAKING</div>
+                    <div style="font-size: 32px; color: #fff; font-weight: 900; margin-bottom: 15px; line-height: 1.2;">MAJOR SETTLEMENT ANNOUNCED</div>
+                    <div style="font-size: 13px; color: #aaa;">$2.1M recovery for motorcycle accident survivor</div>
+                </div>
+                <div class="template-info">
+                    <h4>Announcement (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Breaking news, case victories, urgent announcements, major settlements</p>
+                    <p><strong>Design:</strong> Black background. Bold left border in green (20px). Bold white headline. "BREAKING" label in green.</p>
+                    <p><strong>Tone:</strong> Urgent. Exciting. "This just happened."</p>
+                    <div class="design-approach">
+                        💡 Black background + green left border. Bold typography. Urgent feel. High contrast. Very attention-grabbing.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-top: 4px solid #006838;">
+                    <div style="font-size: 14px; color: #006838; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 20px;">Update</div>
+                    <div style="font-size: 28px; color: #01321D; font-weight: 900; margin-bottom: 20px;">Office Hours Extended</div>
+                    <div style="font-size: 13px; color: #666; line-height: 1.8;">Now open until 6pm weekdays<br>Saturday appointments available</div>
+                </div>
+                <div class="template-info">
+                    <h4>Announcement (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Office updates, hours changes, small announcements, reminders</p>
+                    <p><strong>Design:</strong> Clean light background. Green top border. Centered headline. Simple body text.</p>
+                    <p><strong>Tone:</strong> Professional, helpful, straightforward.</p>
+                    <div class="design-approach">
+                        💡 Light background. Green top border. Clean typography. Professional. Works for routine announcements.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: TESTIMONIALS -->
+        <h2 class="section-header">Section 4: Testimonials & Social Proof</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">Client reviews, success stories, "here's what they said" content.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: #01321D; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 60px; color: #006838; margin-bottom: 20px;">❝</div>
+                    <div style="font-size: 18px; color: #fff; font-weight: 400; font-style: italic; margin-bottom: 25px; line-height: 1.7;">Jason took time to explain everything. He was prepared and ready for trial. Best outcome I could have hoped for.</div>
+                    <div style="font-size: 13px; color: #006838; font-weight: 700;">— Client Name (Motorcycle Accident)</div>
+                </div>
+                <div class="template-info">
+                    <h4>Testimonial (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Client quotes, success stories, satisfaction testimonials</p>
+                    <p><strong>Design:</strong> Dark green background. Large quote mark. Italicized quote. Attribution below. Simple, elegant.</p>
+                    <p><strong>Tone:</strong> Authentic. Trustworthy. "Real people trust us."</p>
+                    <div class="design-approach">
+                        💡 Dark green background. Large quote icon. Italicized quote text. Attribution. Simple and elegant.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #000; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border-left: 10px solid #006838;">
+                    <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                        <span style="color: #006838; font-weight: 900;">★★★★★</span>
+                    </div>
+                    <div style="font-size: 16px; color: #fff; margin-bottom: 25px; line-height: 1.8;">"Jason was absolutely incredible. Professional, prepared, and fought hard for the best result. Highly recommend."</div>
+                    <div style="font-size: 12px; color: #999;">Sarah M. | Workers Comp Case</div>
+                </div>
+                <div class="template-info">
+                    <h4>Testimonial (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> 5-star reviews, strong endorsements, high-impact testimonials</p>
+                    <p><strong>Design:</strong> Black background. Green left border. 5-star rating in green. Quote text. Attribution.</p>
+                    <p><strong>Tone:</strong> Powerful. "People love this firm."</p>
+                    <div class="design-approach">
+                        💡 Black + green border. 5-star rating. Quote text. Very impact-focused. Shows social proof powerfully.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="width: 50px; height: 50px; background: #006838; border-radius: 50%;"></div>
+                        <div>
+                            <div style="font-size: 13px; color: #01321D; font-weight: 700;">Jennifer R.</div>
+                            <div style="font-size: 11px; color: #999;">Motorcycle Accident</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 14px; color: #333; line-height: 1.8;">"They didn't rush me. They explained every step and fought for the compensation I deserved. Great experience."</div>
+                </div>
+                <div class="template-info">
+                    <h4>Testimonial (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Client reviews, routine testimonials, professional references</p>
+                    <p><strong>Design:</strong> Clean light background. Green circle for avatar. Name + practice area. Quote text. Professional layout.</p>
+                    <p><strong>Tone:</strong> Approachable. Trustworthy. Professional.</p>
+                    <div class="design-approach">
+                        💡 Light background. Green circle avatar placeholder. Name + case type. Clean, professional layout. Easy to read.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: CASE RESULTS -->
+        <h2 class="section-header">Section 5: Case Results & Settlements</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">Settlement amounts, verdicts, case outcomes. High-value content for credibility.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #01321D 0%, #000 100%); padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 14px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 20px;">SETTLEMENT</div>
+                    <div style="font-size: 52px; color: #006838; font-weight: 900; margin-bottom: 20px;">$1.2M</div>
+                    <div style="font-size: 14px; color: #fff;">Motorcyclist • Multiple Fractures • Hit by Uninsured Driver</div>
+                </div>
+                <div class="template-info">
+                    <h4>Case Result (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Major settlements, significant verdicts, case outcomes</p>
+                    <p><strong>Design:</strong> Dark gradient background. "SETTLEMENT" label in green. HUGE green dollar amount. Brief case description. Simple, impactful.</p>
+                    <p><strong>Tone:</strong> Results-focused. "We win."</p>
+                    <div class="design-approach">
+                        💡 Gradient green/dark. Large green dollar amount. Minimal text. Huge impact. Very attention-grabbing.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #000; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border-left: 15px solid #006838;">
+                    <div style="font-size: 11px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; margin-bottom: 20px;">CASE RESULT</div>
+                    <div style="font-size: 44px; color: #fff; font-weight: 900; margin-bottom: 15px;">$850K</div>
+                    <div style="font-size: 13px; color: #aaa; line-height: 1.8;">Workers' comp case • Manufacturing injury • Permanent disability benefits secured</div>
+                </div>
+                <div class="template-info">
+                    <h4>Case Result (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Any settlement/verdict. Bold statement of results.</p>
+                    <p><strong>Design:</strong> Black background. Green left border (15px). Green label. Bold white dollar amount. Brief case details. Very direct.</p>
+                    <p><strong>Tone:</strong> Powerful. Confident. "This is what we do."</p>
+                    <div class="design-approach">
+                        💡 Black + thick green border. Bold dollar amount in white. Brief details. Very confidence-building.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 4px solid #006838;">
+                    <div style="font-size: 12px; color: #006838; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 15px;">Result</div>
+                    <div style="font-size: 38px; color: #01321D; font-weight: 900; margin-bottom: 15px;">$650K</div>
+                    <div style="font-size: 13px; color: #666; line-height: 1.8;">Car accident victim • Spinal injury • Settlement secured</div>
+                    <div style="font-size: 11px; color: #999; margin-top: 15px; font-style: italic;">Each case is unique. Results do not guarantee similar outcomes.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Case Result (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Routine case results, gallery feeds, professional portfolio</p>
+                    <p><strong>Design:</strong> Clean light background. Green bottom border. Centered dollar amount. Case brief. Disclaimer included.</p>
+                    <p><strong>Tone:</strong> Professional, credible, compliant.</p>
+                    <div class="design-approach">
+                        💡 Light background. Green bottom border. Centered layout. Includes disclaimer. Professional and legal-appropriate.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: PRACTICE AREAS -->
+        <h2 class="section-header">Section 6: Practice Area Spotlights</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">Motorcycle accidents, workers comp, car accidents, wrongful death. Educational + credibility.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #006838 0%, #01321D 100%); padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">🏍️</div>
+                    <div style="font-size: 28px; color: #fff; font-weight: 900; margin-bottom: 15px;">MOTORCYCLE ACCIDENT?</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.9);">We understand what you're facing. 30+ years of specialized experience.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Practice Area (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Practice area introductions, specialty messaging, audience-targeting</p>
+                    <p><strong>Design:</strong> Gradient green background. Emoji icon. Bold headline (question format). Credibility statement.</p>
+                    <p><strong>Best for:</strong> Organic reach, carousel slides, awareness content</p>
+                    <div class="design-approach">
+                        💡 Gradient green. Emoji for instant recognition. Question headline. Credibility statement. Very approachable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #000; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border-left: 15px solid #006838;">
+                    <div style="font-size: 11px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; margin-bottom: 20px;">WORKERS' COMP</div>
+                    <div style="font-size: 32px; color: #fff; font-weight: 900; margin-bottom: 20px; line-height: 1.2;">You Have More Rights Than You Know</div>
+                    <div style="font-size: 13px; color: #aaa;">Most people accept lowball offers. Here's what you're actually entitled to.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Practice Area (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Hard-hitting practice area messaging, educational CTAs, direct positioning</p>
+                    <p><strong>Design:</strong> Black background. Green left border. Green practice area label. Bold headline. Body copy. Very direct.</p>
+                    <p><strong>Best for:</strong> Targeted ads, issue-specific campaigns, lead generation</p>
+                    <div class="design-approach">
+                        💡 Black + green border. Bold headline (positive statement). Educational angle. Very direct messaging. High-converting.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-top: 4px solid #006838;">
+                    <div style="font-size: 24px; color: #01321D; font-weight: 900; margin-bottom: 15px;">Wrongful Death</div>
+                    <div style="width: 60px; height: 3px; background: #006838; margin-bottom: 20px; margin-left: auto; margin-right: auto;"></div>
+                    <div style="font-size: 13px; color: #666; line-height: 1.8;">We honor their memory by fighting for your family's future. Compassionate representation. Maximum recovery.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Practice Area (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Sensitive practice areas, professional positioning, serious tone</p>
+                    <p><strong>Design:</strong> Light background. Green top border. Practice area headline. Divider line. Compassionate body copy.</p>
+                    <p><strong>Best for:</strong> Firm brand, professional positioning, sensitive subjects</p>
+                    <div class="design-approach">
+                        💡 Light background. Green top border + divider. Compassionate messaging. Clean, respectful layout. Professional tone.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: ATTORNEY SPOTLIGHTS -->
+        <h2 class="section-header">Section 7: Attorney Spotlights</h2>
+        <p style="color: #999; margin-bottom: 40px; font-size: 14px;">Jason, Larry, team members. Personal brand + firm credibility.</p>
+
+        <div class="templates-grid">
+            <div class="template-card">
+                <div class="template-preview" style="background: linear-gradient(90deg, #01321D 0%, #000 50%, #01321D 100%); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+                    <div style="background: #333; width: 100%; aspect-ratio: 3/4; border-radius: 8px;"></div>
+                    <div style="color: #fff;">
+                        <div style="font-size: 11px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; margin-bottom: 15px;">MEET</div>
+                        <div style="font-size: 24px; color: #fff; font-weight: 900; margin-bottom: 10px;">JASON E. TAYLOR</div>
+                        <div style="font-size: 13px; color: #aaa; line-height: 1.8;">30+ years trial experience. Motorcycle community insider. Fights for maximum recovery.</div>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Attorney Spotlight (Approach A)</h4>
+                    <h5>Design: Kompace Organic</h5>
+                    <p><strong>Use:</strong> Introducing attorneys, building personal brand, credibility focus</p>
+                    <p><strong>Design:</strong> 50/50 split (photo + info). Dark background. Name in green. Brief credentials. Alligator watermark optional.</p>
+                    <p><strong>Best for:</strong> LinkedIn, team pages, personal brand building</p>
+                    <div class="design-approach">
+                        💡 Split layout (photo + info). Green name highlight. Brief credentials. Professional but approachable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #000; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-top: 6px solid #006838; border-bottom: 6px solid #006838;">
+                    <div style="font-size: 14px; color: #006838; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; margin-bottom: 25px;">Chief Trial Litigator</div>
+                    <div style="font-size: 36px; color: #fff; font-weight: 900; margin-bottom: 20px;">LARRY SERBIN</div>
+                    <div style="font-size: 13px; color: #aaa; line-height: 1.8;">Complex litigation specialist. Consumer protection expert. Prepared for trial, always.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Attorney Spotlight (Approach B)</h4>
+                    <h5>Design: High-Contrast Bold</h5>
+                    <p><strong>Use:</strong> Bold attorney positioning, leadership profiles, authority building</p>
+                    <p><strong>Design:</strong> Black background. Green top/bottom borders. Green title label. Bold white name. Brief description.</p>
+                    <p><strong>Best for:</strong> Instagram, team showcases, authority positioning</p>
+                    <div class="design-approach">
+                        💡 Black + green borders (top & bottom). Bold name. Title label in green. Very authoritative. Leadership feel.
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-preview" style="background: #f5f5f5; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: #006838; border-radius: 50%; margin-bottom: 25px;"></div>
+                    <div style="font-size: 18px; color: #01321D; font-weight: 900; margin-bottom: 8px;">JASON E. TAYLOR</div>
+                    <div style="font-size: 13px; color: #006838; font-weight: 700; margin-bottom: 15px;">Founding Partner</div>
+                    <div style="font-size: 12px; color: #666; line-height: 1.8;">30+ years of trial experience. Motorcycle community insider. Committed to client results.</div>
+                </div>
+                <div class="template-info">
+                    <h4>Attorney Spotlight (Approach C)</h4>
+                    <h5>Design: Minimal Modern</h5>
+                    <p><strong>Use:</strong> Team pages, company profiles, professional bios, accessible format</p>
+                    <p><strong>Design:</strong> Light background. Green circle avatar. Name + title. Brief bio. Clean, professional layout.</p>
+                    <p><strong>Best for:</strong> Website team pages, Google Business Profile, professional directories</p>
+                    <div class="design-approach">
+                        💡 Light background. Green circle. Name + title in hierarchy. Clean bio. Professional and trustworthy. Very readable.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="legend" style="margin-bottom: 60px;">
+            <h2>Implementation Guidelines</h2>
+
+            <div class="legend-group">
+                <h3>Choosing Templates by Platform</h3>
+                <p><strong>Instagram Feed Posts:</strong> All approaches work. Approach A (Kompace) most authentic for Jason brand. Approach B (Bold) most impactful for firm brand. Approach C (Minimal) best for education/legal content.</p>
+                <p><strong>Instagram Stories/Reels:</strong> Approach B works best (high contrast, visible at small size). Scale typography accordingly.</p>
+                <p><strong>Facebook Posts:</strong> All approaches work. Approach C (Minimal Modern) performs best in News Feed. Include caption below image.</p>
+                <p><strong>LinkedIn:</strong> Approach C preferred (professional, clean). Approach A works for Jason's personal brand.</p>
+            </div>
+
+            <div class="legend-group">
+                <h3>Content Mix Recommendation</h3>
+                <p><strong>Weekly posting schedule (5-7 posts/week):</strong></p>
+                <p>• 2-3 Lifestyle/Personal (Approach A)</p>
+                <p>• 1-2 Educational (Approach B)</p>
+                <p>• 1 Testimonial or Case Result (Approach B or C)</p>
+                <p>• 1 Practice Area or Announcement (Approach C)</p>
+            </div>
+
+            <div class="legend-group">
+                <h3>Design Production Notes</h3>
+                <p><strong>All templates designed for:</strong></p>
+                <p>• Instagram: 1080x1350px (feed), 1080x1920px (Stories/Reels)</p>
+                <p>• Facebook: 1200x1500px (vertical) or 1200x628px (horizontal)</p>
+                <p>• LinkedIn: 1200x627px (horizontal)</p>
+                <p><strong>Build in:</strong> Canva, Adobe XD, or Figma. Export at 72 DPI for web.</p>
+                <p><strong>Fonts:</strong> Nunito Sans family only (400, 700, 900 weights)</p>
+                <p><strong>Colors:</strong> #006838, #01321D, #000000, #FFFFFF only (no exceptions)</p>
+            </div>
+
+            <div class="legend-group">
+                <h3>Next Steps</h3>
+                <p>1. Build master templates in Canva or Adobe (all approaches)</p>
+                <p>2. Create content library (4-week bank of posts using these templates)</p>
+                <p>3. Organize templates by type + approach for easy selection</p>
+                <p>4. Establish approval workflow (Luana reviews, Jason approves personal content)</p>
+                <p>5. Publish on schedule (1+ per platform per week)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
