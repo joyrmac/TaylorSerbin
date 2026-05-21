@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taylor | Serbin Injury Lawyers — Social Media Template System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-primary: #006838;
+    --green-dark: #01321D;
+    --yellow-cta: #F6C01A;
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #f5f5f5;
+    --gray-text: #666666;
+    --gray-border: #d0d0d0;
+
+    --display: 'Nunito Sans', sans-serif;
+    --body: 'Nunito Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #f9f9f9; color: var(--black); font-family: var(--body); }
+  body { padding: 60px 40px; }
+
+  /* ———————— page layout ———————— */
+  .page-header { max-width: 1200px; margin: 0 auto 60px; }
+  .page-header h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 44px;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    color: var(--green-dark);
+  }
+  .page-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray-text);
+    max-width: 720px;
+  }
+  .page-header .rule {
+    width: 40px; height: 2px; background: var(--yellow-cta);
+    margin: 24px 0;
+  }
+
+  .type-section { max-width: 1200px; margin: 0 auto 80px; }
+  .type-header {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--green-primary);
+    padding-bottom: 12px;
+  }
+  .type-header .num {
+    font-family: var(--display);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    color: var(--yellow-cta);
+    text-transform: uppercase;
+  }
+  .type-header h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    color: var(--green-dark);
+  }
+  .type-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--gray-text);
+    margin: 12px 0 28px;
+    max-width: 720px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+  .tpl-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .tpl {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .tpl-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--gray-text);
+    text-transform: uppercase;
+  }
+  .tpl-label .code { color: var(--yellow-cta); font-weight: 900; }
+  .tpl-note {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--gray-text);
+    font-family: var(--body);
+  }
+  .tpl-note strong { color: var(--black); }
+
+  /* ———————— shared template elements ———————— */
+  .photo { background-size: cover; background-position: center; }
+
+  /* ———————— FIRM BRAND: TYPE 1 ———————— */
+
+  /* 1A — Practice Area Spotlight */
+  .tpl-1a {
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+  }
+  .tpl-1a::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
+  }
+  .tpl-1a .overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 40px;
+    color: var(--white);
+  }
+  .tpl-1a .overlay .headline {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 36px;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .tpl-1a .overlay .subhead {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .tpl-1a .accent-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--yellow-cta);
+  }
+
+  /* 1B — Attorney Spotlight */
+  .tpl-1b {
+    background: var(--green-primary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .tpl-1b .photo {
+    background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop');
+    background-position: center;
+  }
+  .tpl-1b .content {
+    background: var(--green-primary);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+  }
+  .tpl-1b .content .title {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .tpl-1b .content .role {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: var(--yellow-cta);
+  }
+  .tpl-1b .content .detail {
+    font-size: 11px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* 1C — Case Result Card */
+  .tpl-1c {
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tpl-1c .badge {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--yellow-cta);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .tpl-1c .amount {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    color: var(--yellow-cta);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .tpl-1c .description {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .tpl-1c .disclaimer {
+    font-size: 10px;
+    color: var(--gray-text);
+    line-height: 1.4;
+    border-top: 1px solid var(--gray-border);
+    padding-top: 12px;
+  }
+
+  /* 1D — Educational Tip */
+  .tpl-1d {
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+  }
+  .tpl-1d::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(1,50,29,0.3) 0%, rgba(1,50,29,0.6) 100%);
+  }
+  .tpl-1d .content {
+    position: absolute;
+    inset: 0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--white);
+  }
+  .tpl-1d .content .headline {
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .tpl-1d .content .points {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .tpl-1d .content .points li {
+    list-style: none;
+    padding: 4px 0;
+  }
+  .tpl-1d .content .points li::before {
+    content: '✓ ';
+    color: var(--yellow-cta);
+    font-weight: 900;
+    margin-right: 6px;
+  }
+  .tpl-1d .content .cta {
+    background: var(--yellow-cta);
+    color: var(--green-dark);
+    padding: 10px 16px;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* 1E — Testimonial */
+  .tpl-1e {
+    background: var(--white);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 4px solid var(--green-primary);
+  }
+  .tpl-1e .stars {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--yellow-cta);
+  }
+  .tpl-1e .quote {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .tpl-1e .attribution {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--gray-text);
+    text-transform: uppercase;
+  }
+
+  /* ———————— JASON PERSONAL BRAND: TYPE 2 ———————— */
+
+  /* 2A — Rider's Life */
+  .tpl-2a {
+    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+  }
+  .tpl-2a .watermark {
+    position: absolute;
+    bottom: 16px; right: 16px;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--white);
+    opacity: 0.15;
+  }
+  .tpl-2a .label {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: rgba(1,50,29,0.7);
+    color: var(--white);
+    padding: 8px 12px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* 2B — Alligator Wisdom */
+  .tpl-2b {
+    background: var(--green-dark);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+  }
+  .tpl-2b .logo {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow-cta);
+    margin-bottom: 16px;
+  }
+  .tpl-2b .headline {
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .tpl-2b .accent-line {
+    width: 40px;
+    height: 2px;
+    background: var(--yellow-cta);
+    margin-bottom: 16px;
+  }
+  .tpl-2b .body {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* 2C — Gourmet Litigator */
+  .tpl-2c {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .tpl-2c .photo {
+    background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop');
+    background-position: center;
+  }
+  .tpl-2c .recipe {
+    background: #fafaf8;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tpl-2c .recipe .title {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+  .tpl-2c .recipe .meta {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--gray-text);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .tpl-2c .recipe .ingredients {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--black);
+  }
+
+  /* 2D — Cigars & Five-Stand */
+  .tpl-2d {
+    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+  }
+  .tpl-2d .badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(246,192,26,0.9);
+    color: var(--green-dark);
+    padding: 8px 12px;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ———————— color palette ———————— */
+  .color-palette {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 40px 0;
+    border-top: 2px solid var(--green-primary);
+  }
+  .color-palette h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--green-dark);
+  }
+  .colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .color-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .color-swatch {
+    width: 100%;
+    height: 100px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-border);
+    margin-bottom: 12px;
+  }
+  .color-info h4 {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  .color-info p {
+    font-size: 12px;
+    color: var(--gray-text);
+  }
+
+  /* ———————— specs ———————— */
+  .specs {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--gray-light);
+    border-radius: 4px;
+  }
+  .specs h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--green-dark);
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+  }
+  .spec-block h4 {
+    font-family: var(--display);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: var(--yellow-cta);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .spec-block p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--black);
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 40px 20px; }
+    .page-header h1 { font-size: 32px; }
+    .type-header h2 { font-size: 22px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Taylor | Serbin Injury Lawyers</h1>
+  <h2 style="font-family: var(--display); font-weight: 400; font-size: 18px; color: var(--gray-text); margin-bottom: 24px;">Social Media Template System</h2>
+  <div class="rule"></div>
+  <p>Comprehensive template showcase for social media content across two parallel strategies: <strong>Firm Brand</strong> (institutional, practice-area focused) and <strong>Jason Personal Brand</strong> (authentic, lifestyle-driven). All templates built on Taylor | Serbin's brand system: Nunito Sans typography, green + yellow + white color palette, Unsplash photography, and mobile-responsive design.</p>
+</div>
+
+<!-- ———————————————— FIRM BRAND ———————————————— -->
+<section class="type-section">
+  <div class="type-header">
+    <span class="num">Firm Brand</span>
+    <h2>Institutional Strategy</h2>
+  </div>
+  <p class="type-desc">Five template types for Taylor|Serbin's main brand accounts (Facebook, Instagram, LinkedIn). Use these for practice areas, attorneys, case results, educational tips, and testimonials. Photography should be professional and relevant; text overlays should be bold and readable on mobile.</p>
+
+  <div class="grid">
+    <!-- 1A: Practice Area Spotlight -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-1a">
+        <div class="accent-bar"></div>
+        <div class="overlay">
+          <div class="headline">MOTORCYCLE ACCIDENT?</div>
+          <div class="subhead">Here's what you need to know</div>
+        </div>
+      </div>
+      <div class="tpl-label"><span class="code">1A</span><span>Practice Area Spotlight</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "motorcycle", "crash", "road injury"<br><strong>Overlay:</strong> Dark gradient bottom 40%, yellow headline, white subhead. Left accent bar (yellow, 4px). <strong>Font:</strong> Bold 36pt headline, 14pt regular subhead.</div>
+    </div>
+
+    <!-- 1B: Attorney Spotlight -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-1b">
+        <div class="photo"></div>
+        <div class="content">
+          <div class="role">Meet the Team</div>
+          <div class="title">Jason E. Taylor</div>
+          <div class="detail">Founding Partner · 30+ years trial experience · Motorcycle community insider · Direct communication, honest guidance</div>
+        </div>
+      </div>
+      <div class="tpl-label"><span class="code">1B</span><span>Attorney Spotlight</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "professional headshot", "lawyer", "portrait man"<br><strong>Layout:</strong> 50/50 split, photo left, green background right with white text. <strong>Font:</strong> Bold 20pt title, 12pt regular role/detail. Yellow accent on role text.</div>
+    </div>
+
+    <!-- 1C: Case Result Card -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-1c">
+        <div class="badge">CASE RESULT</div>
+        <div class="amount">$1.25M</div>
+        <div class="description">Motorcyclist hit by motor vehicle sustaining multiple serious fractures recovered after thorough preparation and aggressive trial readiness.</div>
+        <div class="disclaimer">Each case is unique. Results do not guarantee similar outcomes. This is a historical case result. Every client deserves honest guidance.</div>
+      </div>
+      <div class="tpl-label"><span class="code">1C</span><span>Case Result Card</span></div>
+      <div class="tpl-note"><strong>No photo needed.</strong> White background, minimal design. Yellow badge top, huge yellow dollar amount (48pt bold), black description, gray disclaimer. Use for highlighting major recoveries. Mobile-friendly for sharing/screenshotting.</div>
+    </div>
+
+    <!-- 1D: Educational Tip -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-1d">
+        <div class="content">
+          <div class="headline">CRUSH INJURY AT WORK?</div>
+          <ul class="points">
+            <li>Document everything (photos, names, witnesses)</li>
+            <li>Report to management immediately</li>
+            <li>Seek medical attention (don't delay)</li>
+            <li>Don't settle without a lawyer</li>
+          </ul>
+          <div class="cta">Call Us Today</div>
+        </div>
+      </div>
+      <div class="tpl-label"><span class="code">1D</span><span>Educational Tip</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "workplace injury", "construction", "workers", "industrial"<br><strong>Overlay:</strong> Dark green gradient (bottom 60%), white text. Yellow checkmarks on bullet points. Yellow CTA button. Bold 32pt headline, 12pt body.</div>
+    </div>
+
+    <!-- 1E: Testimonial -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-1e">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="quote">"Jason took time to explain everything. He was prepared and ready. Best outcome I could have hoped for."</div>
+        <div class="attribution">Maria G. · Motorcycle Accident Client</div>
+      </div>
+      <div class="tpl-label"><span class="code">1E</span><span>Testimonial/Social Proof</span></div>
+      <div class="tpl-note"><strong>No photo.</strong> White background with left green border (4px). Yellow stars top, italic quote (16pt), gray attribution below. Use real client quotes. Powerful for trust-building. Leave client name semi-anonymous (first name + case type).</div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————— JASON PERSONAL BRAND ———————————————— -->
+<section class="type-section">
+  <div class="type-header">
+    <span class="num">Jason Personal Brand</span>
+    <h2>Authentic Lifestyle Strategy</h2>
+  </div>
+  <p class="type-desc">Four template types for Jason's personal accounts (@Jasontaylorthelitigator Instagram, Jason E. Taylor Facebook). These are image-first, minimal text, raw/authentic. Photography should feel candid and real—motorcycles, cooking, shooting, and legal wisdom branded with The Litigator alligator. Text overlays are kept small; captions do the talking.</p>
+
+  <div class="grid">
+    <!-- 2A: Rider's Life -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-2a">
+        <div class="label">Sunday Ride</div>
+        <div class="watermark">🐊</div>
+      </div>
+      <div class="tpl-label"><span class="code">2A</span><span>Rider's Life</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "motorcycle", "bike ride", "highway", "road"<br><strong>Overlay:</strong> Small label top-left (green background, white text, 10px font, uppercase). Alligator watermark bottom-right (very subtle, 15% opacity). <strong>Caption:</strong> "200 miles through the mountains. Clean roads, good weather, better company. Remember: check your mirrors, ride smart. Physics doesn't negotiate with you." — Let the image breathe; text is secondary.</div>
+    </div>
+
+    <!-- 2B: Alligator Wisdom -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-2b">
+        <div class="logo">Alligator Wisdom</div>
+        <div class="headline">MOTORCYCLE INSURANCE:</div>
+        <div class="accent-line"></div>
+        <div class="body">Your policy has a deductible. Understand it BEFORE you need it. 50% of riders don't know what theirs means. That's a $1000+ surprise after an accident.</div>
+      </div>
+      <div class="tpl-label"><span class="code">2B</span><span>Alligator Wisdom</span></div>
+      <div class="tpl-note"><strong>No photo.</strong> Dark green background, white text. Yellow "Alligator Wisdom" label, yellow accent line below headline (40px long). Bold 28pt headline, 13pt body. Educational, protective tone. No sales language. This is Jason protecting riders.</div>
+    </div>
+
+    <!-- 2C: Gourmet Litigator -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-2c">
+        <div class="photo"></div>
+        <div class="recipe">
+          <div class="title">Jason's Escargot</div>
+          <div class="meta">Moderate · 45 minutes</div>
+          <div class="ingredients"><strong>Ingredients:</strong> Snails, butter, garlic, parsley, white wine, shallots, fresh thyme</div>
+        </div>
+      </div>
+      <div class="tpl-label"><span class="code">2C</span><span>Gourmet Litigator</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "food plating", "gourmet", "cooking", "escargot" or "fine dining"<br><strong>Layout:</strong> 60% photo top (beautiful food shot), 40% cream background bottom with recipe details. <strong>Caption:</strong> Full recipe and cooking story in comment. "I cook like this. You can too." — No pretense, just authentic.</div>
+    </div>
+
+    <!-- 2D: Cigars & Five-Stand -->
+    <div class="tpl-wrap">
+      <div class="tpl tpl-2d">
+        <div class="badge">Shooting Event</div>
+      </div>
+      <div class="tpl-label"><span class="code">2D</span><span>Cigars & Five-Stand</span></div>
+      <div class="tpl-note"><strong>Unsplash search:</strong> "cigar", "shooting sport", "five-stand", "clay shooting", "outdoor lifestyle"<br><strong>Overlay:</strong> Small yellow badge top-right (if shooting event) or minimal text. <strong>Caption:</strong> "Tournament day at [location]. Tightest group of the day. Controlled breathing, steady aim, no distractions. Same principles apply in the courtroom." — Tie hobbies back to legal philosophy, not obviously, just naturally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————— COLOR PALETTE ———————————————— -->
+<div class="color-palette">
+  <h3>Color System</h3>
+  <div class="colors-grid">
+    <div class="color-block">
+      <div class="color-swatch" style="background: #006838;"></div>
+      <div class="color-info">
+        <h4>Primary Green</h4>
+        <p>#006838<br>Accents, borders, left bars. Used sparingly (2-3% of design).</p>
+      </div>
+    </div>
+    <div class="color-block">
+      <div class="color-swatch" style="background: #01321D;"></div>
+      <div class="color-info">
+        <h4>Dark Green</h4>
+        <p>#01321D<br>Text, depth, backgrounds. Headlines and serious content.</p>
+      </div>
+    </div>
+    <div class="color-block">
+      <div class="color-swatch" style="background: #F6C01A;"></div>
+      <div class="color-info">
+        <h4>Yellow CTA</h4>
+        <p>#F6C01A<br>Call-to-actions ONLY. Phone numbers, buttons, critical info. Stops the eye.</p>
+      </div>
+    </div>
+    <div class="color-block">
+      <div class="color-swatch" style="background: #ffffff; border: 2px solid #ddd;"></div>
+      <div class="color-info">
+        <h4>White</h4>
+        <p>#FFFFFF<br>Backgrounds, breathing room, negative space.</p>
+      </div>
+    </div>
+    <div class="color-block">
+      <div class="color-swatch" style="background: #000000;"></div>
+      <div class="color-info">
+        <h4>Black</h4>
+        <p>#000000<br>Body text, depth. All readable text should be black on white or white on dark.</p>
+      </div>
+    </div>
+    <div class="color-block">
+      <div class="color-swatch" style="background: #666666;"></div>
+      <div class="color-info">
+        <h4>Gray Text</h4>
+        <p>#666666<br>Secondary information, less important text, metadata.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ———————————————— TYPOGRAPHY & SPECS ———————————————— -->
+<div class="specs">
+  <h3>System Specifications</h3>
+  <div class="specs-grid">
+    <div class="spec-block">
+      <h4>Typography</h4>
+      <p><strong>Display:</strong> Nunito Sans, Weight 900<br><strong>Accent:</strong> Nunito Sans, Weight 700, Letterspaced<br><strong>Body:</strong> Nunito Sans, Weight 400<br>Headlines always bold/extra bold. Never use decorative scripts. Letterspacing on all-caps labels (0.1em minimum).</p>
+    </div>
+    <div class="spec-block">
+      <h4>Photography</h4>
+      <p><strong>Firm Brand:</strong> Professional, relevant to practice area. Motorcycles, construction, workplace, vehicles. Use Unsplash.<br><strong>Jason Brand:</strong> Authentic, candid moments. Real life, not staged. Action photos > posed shots.</p>
+    </div>
+    <div class="spec-block">
+      <h4>Layout Principles</h4>
+      <p><strong>Mobile First:</strong> All text must be readable on 4-inch phone screen without zoom.<br><strong>Contrast:</strong> 4.5:1 text-to-background minimum for readability.<br><strong>White Space:</strong> Generous margins. Never edge-to-edge collage.</p>
+    </div>
+    <div class="spec-block">
+      <h4>Accent Usage</h4>
+      <p><strong>Green:</strong> 2-3% of post (left bar, accent line, borders).<br><strong>Yellow:</strong> CTA only (phone, buttons, "click here", critical info).<br><strong>One accent per post:</strong> Choose either green or yellow, not both unless separated.</p>
+    </div>
+    <div class="spec-block">
+      <h4>Unsplash Suggestions</h4>
+      <p><strong>Motorcycles:</strong> "motorcycle", "bike ride", "highway", "crash", "helmet"<br><strong>Workplace:</strong> "construction", "workers", "injury", "industrial", "warehouse"<br><strong>Food:</strong> "food plating", "gourmet", "cooking", "restaurant", "cigar"</p>
+    </div>
+    <div class="spec-block">
+      <h4>Text Overlay Tips</h4>
+      <p><strong>Bold Headline:</strong> 28-48pt, all-caps or title case, high contrast.<br><strong>Dark Overlays:</strong> Use gradient (transparent top, opaque bottom) for readability.<br><strong>Watermarks:</strong> Alligator logo 10-15% opacity, bottom-right.<br><strong>CTAs:</strong> Always yellow background, dark text, 11pt bold, uppercase.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
