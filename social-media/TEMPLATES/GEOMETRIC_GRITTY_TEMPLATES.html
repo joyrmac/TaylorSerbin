@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason E. Taylor — Geometric Gritty Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 6px solid #006838;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #999;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .philosophy {
+            background: linear-gradient(135deg, #000 0%, #01321D 100%);
+            color: white;
+            padding: 50px;
+            margin-bottom: 80px;
+            font-size: 17px;
+            line-height: 2;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-left: 8px solid #006838;
+            border-right: 3px solid #006838;
+            position: relative;
+        }
+
+        .philosophy::before {
+            content: "🐊";
+            position: absolute;
+            top: -30px;
+            right: 40px;
+            font-size: 120px;
+            opacity: 0.1;
+        }
+
+        .philosophy strong {
+            color: #006838;
+            font-weight: 900;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .template-card {
+            background: transparent;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: scale(1.01);
+        }
+
+        .template-showcase {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 12;
+            overflow: hidden;
+            background: #000;
+            border: 3px solid #006838;
+        }
+
+        /* Base image */
+        .template-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* Dark overlay base */
+        .overlay-base {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        /* Diagonal lines overlay */
+        .diagonal-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(0, 104, 56, 0.15) 20px,
+                rgba(0, 104, 56, 0.15) 24px
+            );
+            z-index: 3;
+        }
+
+        /* Grid pattern overlay */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(0, 104, 56, 0.1) 0px, rgba(0, 104, 56, 0.1) 1px, transparent 1px, transparent 30px),
+                repeating-linear-gradient(90deg, rgba(0, 104, 56, 0.1) 0px, rgba(0, 104, 56, 0.1) 1px, transparent 1px, transparent 30px);
+            z-index: 3;
+        }
+
+        /* Geometric accent shapes */
+        .geo-accent {
+            position: absolute;
+            z-index: 4;
+        }
+
+        .geo-accent.line-vertical {
+            width: 6px;
+            height: 30%;
+            background: #006838;
+            top: 20px;
+            right: 30px;
+        }
+
+        .geo-accent.line-horizontal {
+            width: 40%;
+            height: 3px;
+            background: #006838;
+            top: 40px;
+            right: 0;
+        }
+
+        .geo-accent.corner-bracket {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #006838;
+            top: 30px;
+            left: 30px;
+        }
+
+        .geo-accent.stripe-diagonal {
+            width: 80px;
+            height: 6px;
+            background: #006838;
+            transform: rotate(45deg);
+            bottom: 80px;
+            right: 40px;
+        }
+
+        /* Content area */
+        .template-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px 40px;
+            color: white;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.95) 100%);
+        }
+
+        .template-content h3 {
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+        }
+
+        .template-content h3 .accent {
+            color: #006838;
+        }
+
+        .template-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .cta-box {
+            background: #006838;
+            color: #000;
+            padding: 12px 20px;
+            font-weight: 900;
+            font-size: 13px;
+            display: inline-block;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+        }
+
+        .alligator-mark {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 72px;
+            opacity: 0.2;
+            z-index: 4;
+        }
+
+        .template-info {
+            padding: 40px;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-top: none;
+        }
+
+        .template-info h4 {
+            font-size: 20px;
+            color: #006838;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .template-info p {
+            font-size: 14px;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .usage-tip {
+            background: rgba(0, 104, 56, 0.12);
+            border-left: 4px solid #006838;
+            padding: 18px;
+            font-size: 13px;
+            color: #999;
+            margin-top: 18px;
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 4px;
+            background: linear-gradient(90deg, #006838 0%, transparent 100%);
+            margin: 100px 0;
+        }
+
+        .guidelines {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 60px;
+            margin-bottom: 80px;
+            border: 3px solid #006838;
+            border-left: 8px solid #006838;
+        }
+
+        .guidelines h2 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .guideline-group {
+            margin-bottom: 50px;
+        }
+
+        .guideline-group h3 {
+            font-size: 20px;
+            color: #006838;
+            margin-bottom: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .guideline-group ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .guideline-group li {
+            margin-bottom: 16px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .guideline-group li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #006838;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .color-block {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 2px;
+            margin-right: 12px;
+            vertical-align: middle;
+            border: 2px solid #444;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: #333;
+            margin: 50px 0;
+        }
+
+        .edge-statement {
+            background: linear-gradient(90deg, rgba(0, 104, 56, 0.2) 0%, transparent 100%);
+            border: 2px solid #006838;
+            padding: 30px;
+            margin-top: 50px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .template-content h3 {
+                font-size: 28px;
+            }
+
+            .template-content {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jason E. Taylor — Geometric Gritty</h1>
+            <p class="subtitle">
+                Real photos + graphic design work. Diagonal lines. Grid patterns. Geometric accents. Aggressive layout.
+                Bold typography. Dark overlays + design elements. Modern. Edgy. Designed, not filtered.
+            </p>
+        </header>
+
+        <div class="philosophy">
+            <strong>Design Philosophy:</strong><br><br>
+            "These aren't filtered photos. These are designed. Diagonal lines. Grid patterns. Geometric shapes layered over real images.
+            Dark overlays with intentional graphic elements. Bold, asymmetrical layout. The design work shows—it's not hidden.
+            Jason's real world (motorcycle, kitchen, range) meets modern aggressive design. Sophisticated but street-level. Designed edge."
+        </div>
+
+        <h2 style="font-size: 36px; color: #fff; margin-bottom: 60px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px;">
+            Template System (Geometric + Gritty)
+        </h2>
+
+        <div class="templates-grid">
+            <!-- Template 1: Rider's Life (Diagonal Lines) -->
+            <div class="template-card">
+                <div class="template-showcase">
+                    <img class="template-bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop" alt="">
+                    <div class="overlay-base"></div>
+                    <div class="diagonal-lines"></div>
+                    <div class="geo-accent line-vertical"></div>
+                    <div class="geo-accent line-horizontal"></div>
+                    <div class="alligator-mark">🐊</div>
+                    <div class="template-content">
+                        <h3>SUNDAY <span class="accent">RIDE</span></h3>
+                        <p>200 miles. Clean roads. Real.</p>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 1: Rider's Life</h4>
+                    <p><strong>Use:</strong> Motorcycle action shots, riding moments, real roads, community events</p>
+                    <p><strong>Design Elements:</strong> Photo + dark overlay + diagonal line pattern + geometric accent lines (vertical/horizontal)</p>
+                    <p><strong>Vibe:</strong> Dynamic, energetic, motion-focused. Diagonal lines suggest movement.</p>
+                    <div class="usage-tip">
+                        💡 Photo is real action. Diagonal lines add energy and design sophistication. Geometric accents frame the content.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 2: Alligator Wisdom (Grid) -->
+            <div class="template-card">
+                <div class="template-showcase" style="background: linear-gradient(135deg, #000 0%, #01321D 100%);">
+                    <div style="position: absolute; width: 100%; height: 100%; z-index: 1;">
+                        <div class="grid-pattern"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 140px; opacity: 0.08; z-index: 1;">🐊</div>
+                    </div>
+                    <div class="geo-accent corner-bracket"></div>
+                    <div class="template-content">
+                        <h3>MOTORCYCLE <span class="accent">INSURANCE</span></h3>
+                        <p>Your deductible is higher than you think.</p>
+                        <p style="font-size: 13px; margin-top: 8px; opacity: 0.85;">Check it NOW. Don't find out later.</p>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 2: Alligator Wisdom</h4>
+                    <p><strong>Use:</strong> Legal tips, insurance info, safety warnings, protective messaging</p>
+                    <p><strong>Design Elements:</strong> Dark gradient background + grid pattern overlay + corner bracket accent</p>
+                    <p><strong>Vibe:</strong> Technical, protective, structured. Grid suggests precision and information.</p>
+                    <div class="usage-tip">
+                        💡 No photo needed. Grid overlay adds sophistication. Corner bracket creates design framing. Protective messaging.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 3: Gourmet (Diagonal + Grid) -->
+            <div class="template-card">
+                <div class="template-showcase">
+                    <img class="template-bg" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=800&fit=crop" alt="">
+                    <div class="overlay-base"></div>
+                    <div class="diagonal-lines"></div>
+                    <div class="grid-pattern"></div>
+                    <div class="geo-accent stripe-diagonal"></div>
+                    <div class="alligator-mark">🐊</div>
+                    <div class="template-content">
+                        <h3><span class="accent">ESCARGOT</span></h3>
+                        <p>This is how I do it.</p>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 3: Gourmet Litigator</h4>
+                    <p><strong>Use:</strong> Recipes, cooking photos, kitchen moments, food storytelling</p>
+                    <p><strong>Design Elements:</strong> Photo + dark overlay + diagonal lines + grid pattern + diagonal stripe accent</p>
+                    <p><strong>Vibe:</strong> Sophisticated, layered, refined. Multiple pattern layers create complexity.</p>
+                    <div class="usage-tip">
+                        💡 Real food photography. Multiple overlays create depth. Diagonal stripe adds accent. Captions carry full recipe.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 4: Cigars & Five-Stand (Minimal) -->
+            <div class="template-card">
+                <div class="template-showcase">
+                    <img class="template-bg" src="https://images.unsplash.com/photo-1581318282575-3fdfb6a20da8?w=600&h=800&fit=crop" alt="">
+                    <div class="overlay-base"></div>
+                    <div class="grid-pattern"></div>
+                    <div class="geo-accent line-vertical"></div>
+                    <div class="alligator-mark">🐊</div>
+                    <div class="template-content">
+                        <h3>TOURNAMENT <span class="accent">DAY</span></h3>
+                        <p>Controlled breathing. Steady aim. No distractions.</p>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 4: Cigars & Five-Stand</h4>
+                    <p><strong>Use:</strong> Hobby moments, shooting competitions, lifestyle capture, real events</p>
+                    <p><strong>Design Elements:</strong> Photo + dark overlay + grid pattern + vertical accent line</p>
+                    <p><strong>Vibe:</strong> Focused, disciplined, precise. Clean lines suggest control.</p>
+                    <div class="usage-tip">
+                        💡 Captured moment (not posed). Grid pattern for structure. Vertical line suggests discipline. Caption ties to trial mindset.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 5: Pure Impact (Diagonal Heavy) -->
+            <div class="template-card">
+                <div class="template-showcase">
+                    <img class="template-bg" src="https://images.unsplash.com/photo-1464219414306-cec08fb1170f?w=600&h=800&fit=crop" alt="">
+                    <div class="overlay-base"></div>
+                    <div class="diagonal-lines"></div>
+                    <div class="geo-accent stripe-diagonal" style="bottom: 120px; width: 120px; height: 8px;"></div>
+                    <div class="alligator-mark" style="opacity: 0.15;">🐊</div>
+                    <div class="template-content">
+                        <h3 style="font-size: 44px; margin-bottom: 0;">THE RIDE</h3>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 5: Pure Impact</h4>
+                    <p><strong>Use:</strong> When you have a killer single photo. Powerful moment. Minimal text.</p>
+                    <p><strong>Design Elements:</strong> Photo + dark overlay + heavy diagonal pattern + accent stripe</p>
+                    <p><strong>Vibe:</strong> Powerful, energetic, image-forward. Diagonal pattern dominates.</p>
+                    <div class="usage-tip">
+                        💡 Image IS the message. Minimal headline. Heavy diagonal pattern creates motion. Caption tells full story.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template 6: Direct + Geometric -->
+            <div class="template-card">
+                <div class="template-showcase" style="background: linear-gradient(135deg, #01321D 0%, #000 100%);">
+                    <div style="position: absolute; width: 100%; height: 100%; z-index: 1;">
+                        <div class="diagonal-lines"></div>
+                        <div class="grid-pattern"></div>
+                    </div>
+                    <div class="geo-accent corner-bracket" style="bottom: 50px; right: 40px; top: auto; left: auto;"></div>
+                    <div class="alligator-mark">🐊</div>
+                    <div class="template-content">
+                        <h3>YOU GOT IN <span class="accent">AN ACCIDENT</span></h3>
+                        <p>Here's what to do.</p>
+                        <p style="font-size: 13px; margin-top: 8px;">Here's what NOT to do.</p>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <h4>Template 6: Direct + Geometric</h4>
+                    <p><strong>Use:</strong> What-to-do guides, safety warnings, protective legal info</p>
+                    <p><strong>Design Elements:</strong> Dark gradient + diagonal + grid patterns + corner bracket (bottom right)</p>
+                    <p><strong>Vibe:</strong> Protective, structured, urgent. Multiple patterns create visual weight.</p>
+                    <div class="usage-tip">
+                        💡 No photo. Gradient background. Multiple pattern overlays. Corner bracket accents. Urgent messaging.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="guidelines">
+            <h2>Geometric Design Rules</h2>
+
+            <div class="guideline-group">
+                <h3>The Core Principle</h3>
+                <ul>
+                    <li><strong>Real photos + designed overlays.</strong> Not filtered. Designed. These are two separate things layered intentionally.</li>
+                    <li><strong>Geometric patterns are VISIBLE.</strong> Diagonal lines, grids, shapes—they're part of the design, not hidden.</li>
+                    <li><strong>Dark overlays are the base.</strong> Then patterns layer on top. Then accents layer on top of that.</li>
+                    <li><strong>Photo quality matters.</strong> But design sophistication matters MORE. Design IS the brand marker.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Pattern Overlays (The Design)</h3>
+                <ul>
+                    <li><strong>Diagonal Lines:</strong> 45° angle stripes (20-24px spacing). 10-15% opacity. Creates motion and energy.</li>
+                    <li><strong>Grid Pattern:</strong> Intersecting horizontal + vertical lines (30px spacing). 10% opacity. Creates structure and precision.</li>
+                    <li><strong>Combined Patterns:</strong> Diagonal + grid together = sophisticated complexity. Use on hero shots.</li>
+                    <li><strong>Stripe Accents:</strong> Solid diagonal stripes (6-8px wide). Full opacity. Used as design highlights.</li>
+                    <li><strong>All patterns in green (#006838).</strong> Visible but not overwhelming. They frame the photo.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Geometric Accent Shapes</h3>
+                <ul>
+                    <li><strong>Vertical lines:</strong> 3-6px wide, 30-50% of image height. Placed top right or left edge.</li>
+                    <li><strong>Horizontal lines:</strong> 3-6px high, 40-60% of image width. Top or bottom placement.</li>
+                    <li><strong>Corner brackets:</strong> L-shaped corners (40x40px minimum). 3px stroke. Top left or bottom right.</li>
+                    <li><strong>Diagonal stripes:</strong> 45° angle, 6-8px wide. Placed as accents (bottom/right typically).</li>
+                    <li><strong>All accents in bright green (#006838).</strong> Sharp, visible, not soft.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Color System (Geometric Edition)</h3>
+                <ul>
+                    <li><span class="color-block" style="background: #006838;"></span><strong>Bright Green #006838</strong> — All geometric shapes, lines, accents. Sharp. Visible.</li>
+                    <li><span class="color-block" style="background: #01321D;"></span><strong>Dark Green #01321D</strong> — Background overlays, gradients. Base color.</li>
+                    <li><span class="color-block" style="background: #000000;"></span><strong>Black #000000</strong> — Primary overlay color. Depth. Contrast.</li>
+                    <li><span class="color-block" style="background: #FFFFFF;"></span><strong>White #FFFFFF</strong> — Text on dark. Headlines and body.</li>
+                    <li><strong>No other colors.</strong> This is disciplined. Green/black/white only.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Overlay Layering (The Stack)</h3>
+                <ul>
+                    <li><strong>Layer 1 — Photo:</strong> Real image (motorcycle, food, action)</li>
+                    <li><strong>Layer 2 — Dark Overlay:</strong> 60-75% opacity black/dark green gradient</li>
+                    <li><strong>Layer 3 — Pattern(s):</strong> Diagonal lines and/or grid (10-15% opacity)</li>
+                    <li><strong>Layer 4 — Geometric Accents:</strong> Lines, corners, stripes (full opacity, green)</li>
+                    <li><strong>Layer 5 — Content:</strong> Text with dark gradient background at bottom</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Typography (With Design)</h3>
+                <ul>
+                    <li><strong>Headlines:</strong> Nunito Sans 900 weight. 36-44pt. ALL CAPS. Letter-spacing -1.5px. White text.</li>
+                    <li><strong>Accent words:</strong> Same size but color: #006838. Creates visual hierarchy within headline.</li>
+                    <li><strong>Body text:</strong> Nunito Sans 400 weight. 14-16pt. White on dark. Line height 1.6+.</li>
+                    <li><strong>Minimal text on image.</strong> Max 1-2 lines. Captions do heavy lifting.</li>
+                    <li><strong>Sharp, aggressive typography.</strong> Not friendly. Bold and direct.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Alligator Logo Placement</h3>
+                <ul>
+                    <li><strong>Standard Placement:</strong> Top right, 25% opacity. Large (60-80px).</li>
+                    <li><strong>Watermark Style:</strong> Center-background, 8-10% opacity. Huge (120-150px).</li>
+                    <li><strong>Consistency:</strong> Same placement per template type across all posts.</li>
+                    <li><strong>Never hide it.</strong> It's THE brand mark. Jason's personal brand identifier.</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>What Makes This "Geometric Gritty"</h3>
+                <ul>
+                    <li>✅ <strong>Designed, not filtered:</strong> Intentional graphic elements, not auto-generated</li>
+                    <li>✅ <strong>Patterns visible:</strong> Diagonal lines and grids are seen, not hidden</li>
+                    <li>✅ <strong>Multiple layer stack:</strong> Photo → overlay → patterns → accents → text (sophisticated)</li>
+                    <li>✅ <strong>Geometric shapes:</strong> Lines, corners, stripes used intentionally as design</li>
+                    <li>✅ <strong>Bright green accents:</strong> Sharp, not soft. Marks it as Jason's brand.</li>
+                    <li>✅ <strong>Dark base:</strong> 60-75% dark overlay creates seriousness and edge</li>
+                    <li>✅ <strong>Real photos + design work:</strong> Two separate, intentional layers</li>
+                    <li>✅ <strong>Modern aesthetic:</strong> Sophisticated design + street-level edge. Not corporate. Not Instagram.</li>
+                    <li>❌ <strong>NOT:</strong> Filters, soft gradients, rounded corners, corporate polish, single-layer design</li>
+                </ul>
+            </div>
+
+            <div class="guideline-group">
+                <h3>Caption Strategy</h3>
+                <ul>
+                    <li><strong>Image + design set the mood.</strong> Caption tells the story and context.</li>
+                    <li><strong>2-4 sentences max.</strong> Direct. Jason's voice. Peer-level tone.</li>
+                    <li><strong>Example:</strong> "Just rolled in from 200 miles through the mountains. Clean roads, good weather, better company. If you're riding tomorrow, check your brakes first. Physics doesn't negotiate with you."</li>
+                    <li><strong>No corporate speak.</strong> No marketing language. Real person, real moment.</li>
+                </ul>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="guideline-group">
+                <h3>Image Specifications</h3>
+                <ul>
+                    <li><strong>Instagram Feed:</strong> 1080x1350px (vertical). All geometric patterns same.</li>
+                    <li><strong>Instagram Story/Reel:</strong> 1080x1920px (full vertical). Scale patterns accordingly.</li>
+                    <li><strong>Facebook:</strong> 1200x1500px (vertical) or 1200x628px (horizontal).</li>
+                    <li><strong>DPI:</strong> 72 DPI for web.</li>
+                    <li><strong>Pattern consistency:</strong> Same diagonal spacing, same grid size across all sizes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="edge-statement">
+            🐊 <strong>The Design Philosophy:</strong> These aren't just dark filtered photos. These are intentionally designed.
+            Geometric patterns layer with dark overlays. Accent shapes frame the content. Real motorcycle/kitchen/lifestyle photos
+            meet sophisticated graphic design. The design work is VISIBLE—it's not hidden or subtle. This is modern, aggressive,
+            street-level design. Professional production + raw authenticity + geometric sophistication. That's the edge.
+        </div>
+    </div>
+</body>
+</html>
