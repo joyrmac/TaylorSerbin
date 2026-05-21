@@ -55,6 +55,8 @@
 |------|---------|
 | `firm-website/CRITICAL_ISSUES.md` | Website audit, performance problems |
 | `firm-website/ROADMAP.md` | Website improvement plan |
+| `firm-website/BRAND_POSITIONING_REFERENCE.md` | Current firm positioning from Homepage & About Us pages |
+| `firm-website/WEBSITE_REPOSITORY.md` | Complete firm information from website repository Excel (team, locations, practice areas, case results, testimonials, FAQs) |
 
 #### Personal Brand Strategy
 | File | Content |
@@ -161,6 +163,18 @@
 - ✅ Color palette: Documented in BRANDING_GUIDE.md
 - ✅ Voice standards: Documented in EXECUTION_STANDARDS.md
 
+### Website Repository (Comprehensive)
+- ✅ Firm identity & branding (legal names, DBA, taglines, value propositions)
+- ✅ Team information (Jason E. Taylor, Larry Serbin: full bios, credentials, bar admissions, awards)
+- ✅ Office locations (4 confirmed: Hickory NC primary, Charlotte NC, Concord NC, Rock Hill SC)
+- ✅ Practice areas (personal injury, motorcycle, car, truck accidents, wrongful death, workers' comp, premises liability, civil litigation)
+- ✅ Case results (settlements from $70k to $4.2M+)
+- ✅ Testimonials (library of client reviews and case stories)
+- ✅ Awards & recognition (Martindale-Hubbell AV, board certifications, association memberships)
+- ✅ FAQs (comprehensive, reusable across channels)
+- ✅ Content assets (photos, videos, graphics inventory)
+- ✅ Contact information (toll-free number, office details, intake forms)
+
 ### Performance Data
 - ✅ Website metrics: 500k+ monthly impressions, 0.59% CTR average
 - ✅ Critical issue: Location pages only 0.14% CTR vs. blog content 1.73%
@@ -252,7 +266,7 @@ Everything flows from doctrine → strategy → execution.
 
 | Metric | Count |
 |--------|-------|
-| Documentation files | 29 markdown files |
+| Documentation files | 33 markdown files |
 | Total files | 154 (includes images, git) |
 | Repository size | 2.7 MB |
 | Social media accounts | 10 (3 new, 7 legacy) |
@@ -298,6 +312,12 @@ Everything flows from doctrine → strategy → execution.
 
 **"What social accounts do we have?"**  
 → `/tools/INTEGRATIONS.md` or `/info/WHAT_WE_KNOW.md`
+
+**"What's the complete firm information?"**  
+→ `/strategy/firm-website/WEBSITE_REPOSITORY.md` (from Excel)
+
+**"What skills are needed for each role?"**  
+→ `/SKILLS.md` (including Website Content Manager role)
 
 ---
 
