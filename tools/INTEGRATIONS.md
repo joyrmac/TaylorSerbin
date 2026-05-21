@@ -7,13 +7,28 @@
 
 ## Social Media Platforms
 
-### Instagram (@Jasontaylorthelitigator)
-**Account Status:** [Active / Needs setup]  
-**Login:** [Credential location / Method]  
-**Owner:** [Primary account holder]  
-**Backup:** [Secondary access]  
+### Instagram
 
-**Features:**
+**NEW Account (Taylor | Serbin Brand):**
+- **Handle:** @taylorserbinlaw
+- **URL:** https://www.instagram.com/taylorserbinlaw/
+- **Account Status:** Active (new branding)
+- **Purpose:** Firm-focused social media (not personal brand)
+- **Login:** [To be filled in]
+- **Owner:** [To be filled in]
+
+**OLD Account (LOJET - Legacy):**
+- **Handle:** @lawoffices_of_jason_e._taylor
+- **URL:** https://www.instagram.com/lawoffices_of_jason_e._taylor/
+- **Account Status:** Active (being phased out)
+- **Purpose:** Legacy account, gradual migration to new
+
+**For Personal Brand (Jason's Account):**
+- **Handle:** @Jasontaylorthelitigator (planned per strategy)
+- **Purpose:** Personal brand (separate from firm)
+- **Status:** [To be created or confirmed]
+
+**Features on all accounts:**
 - [ ] Profile optimized
 - [ ] Bio links set up
 - [ ] Stories enabled
@@ -25,10 +40,18 @@
 ---
 
 ### LinkedIn
-**Account Status:** [Active / Needs setup]  
-**Profile URL:** [URL]  
-**Login:** [Credential location / Method]  
-**Owner:** [Primary account holder]  
+
+**Firm Page:**
+- **URL:** https://www.linkedin.com/company/the-law-offices-of-jason-e-taylor
+- **Note:** Page renamed to Taylor | Serbin, old URL slug maintained
+- **Status:** Active
+- **Login:** [To be filled in]
+- **Owner:** [To be filled in]
+
+**Jason's Personal Profile:**
+- **URL:** https://www.linkedin.com/in/jason-e-taylor-261ab8b/
+- **Status:** Active (for personal brand)
+- **Login:** [To be filled in]
 
 **Features:**
 - [ ] Profile optimized
@@ -39,16 +62,51 @@
 
 ---
 
-### Facebook (Jason E. Taylor, The Litigator)
-**Account Status:** [Active / Needs setup]  
-**Login:** [Credential location / Method]  
-**Owner:** [Primary account holder]  
+### Facebook
+
+**NEW Account (Taylor | Serbin Brand):**
+- **URL:** https://www.facebook.com/profile.php?id=61586215111345
+- **Status:** Active (new branding)
+- **Purpose:** Primary firm social presence
+- **Login:** [To be filled in]
+- **Owner:** [To be filled in]
+
+**LEGACY Accounts (LOJET - Old Brand):**
+- **Main:** https://www.facebook.com/TheLawOfficesOfJasonETaylor
+- **Charlotte Local:** https://www.facebook.com/LOJET100Charlotte/
+- **Hickory Local:** https://www.facebook.com/LOJET100Hickory/
+- **Status:** Active (being phased out)
+- **Strategy:** Gradual migration to new account
 
 **Features:**
 - [ ] Profile optimized
 - [ ] Events feature set up
 - [ ] Groups (if applicable)
 - [ ] Community features enabled
+
+---
+
+### Twitter
+**Handle:** @LawyerJET  
+**URL:** https://twitter.com/LawyerJET  
+**Status:** Active  
+**Purpose:** [Thought leadership / Updates / Community engagement]  
+**Login:** [To be filled in]  
+
+---
+
+### YouTube
+
+**Primary Channel:**
+- **URL:** https://www.youtube.com/channel/UCwwKqWbzARPNep3BCnV_TAw
+- **Status:** Active
+- **Purpose:** [Video content, testimonials, legal education]
+- **Login:** [To be filled in]
+
+**Secondary Channel:**
+- **URL:** https://www.youtube.com/channel/UC0jOhydNNiqVgyqh-v2Mo7A
+- **Status:** Active
+- **Purpose:** [To be documented]
 
 ---
 
@@ -179,6 +237,14 @@ assets/
 - [ ] Shared via [secure method]
 - [ ] Updated when team changes
 - [ ] Audit trail maintained
+
+**Platform Accounts Needing Credentials:**
+- Instagram: @taylorserbinlaw (new) + @lawoffices_of_jason_e._taylor (old)
+- Facebook: Taylor | Serbin page + LOJET accounts (3)
+- LinkedIn: Firm page + Jason personal profile
+- Twitter: @LawyerJET
+- YouTube: 2 channels
+- TikTok: [If applicable]
 
 **Who has access?**
 - [Team member]: [Platforms]
