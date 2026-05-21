@@ -161,6 +161,76 @@ Before joining any team, members must demonstrate:
 
 ---
 
+### Website Content Manager / Information Manager
+**Primary responsibility:** Maintain website repository data, coordinate firm/personal brand content, ensure messaging consistency, manage SEO
+
+**Required Skills:**
+- Information architecture (organizing complex data logically)
+- Content consistency audit (tracking messaging across platforms)
+- Database/spreadsheet management (Excel, Google Sheets, Notion)
+- Project tracking (managing multiple content initiatives simultaneously)
+- SEO fundamentals (keyword research, meta descriptions, internal linking)
+- Copy editing (ensuring accuracy and tone consistency)
+- Attention to detail (catching inconsistencies others miss)
+- Documentation discipline (keeping records updated and organized)
+
+**Platform Knowledge:**
+- Website CMS basics (whatever platform the website uses)
+- Meta Business Suite (managing firm Facebook/Instagram pages)
+- LinkedIn analytics (firm page performance)
+- Google Search Console (SEO monitoring)
+- Google Analytics (traffic patterns, conversion tracking)
+
+**Strategic Skills:**
+- Understanding how firm website strategy differs from personal brand
+- Recognizing what information serves SEO vs. conversion
+- Planning content calendars across channels
+- Coordinating content between Jason's personal posts and firm announcements
+- Identifying content gaps and opportunities
+
+**Nice to Have:**
+- Technical SEO knowledge (site structure, schema markup)
+- Web analytics interpretation
+- Legal/compliance knowledge (flagging accuracy issues)
+- Marketing background (understanding conversion funnels)
+- Data visualization (creating dashboards for metrics)
+
+**Development Areas:**
+- Strategic thinking (not just tactical task completion)
+- Quick turnaround on data updates
+- Proactive identification of inconsistencies
+- Cross-team communication and coordination
+
+**Key Responsibilities:**
+1. Maintain website repository (Excel) with current firm information
+2. Audit website for consistency with repository data
+3. Flag discrepancies between repository and live website
+4. Coordinate messaging between firm website and social channels
+5. Manage content calendar across all platforms
+6. Monitor SEO performance and identify opportunities
+7. Ensure all team members have current firm information
+8. Track what content is performing and why
+9. Identify reusable content (FAQs → social posts, etc.)
+10. Maintain documentation of all processes
+
+**Success Indicators:**
+✅ Website information matches repository data (weekly audit)
+✅ No messaging inconsistencies across channels (monthly review)
+✅ Content calendar maintained 4+ weeks ahead
+✅ SEO metrics tracked and trending data available
+✅ Team has access to current firm information (no outdated data)
+✅ Identified and filled at least 2 content gaps per month
+✅ Cross-team coordination smooth (on-time handoffs, clear communication)
+
+**Red Flags:**
+⚠️ Website information is stale/inconsistent with repository
+⚠️ Team members using outdated firm details
+⚠️ No mechanism for tracking what's working across channels
+⚠️ Content gaps not identified proactively
+⚠️ Repository not updated when changes happen
+
+---
+
 ## Cross-Functional Skills
 
 ### Everyone Should Have
