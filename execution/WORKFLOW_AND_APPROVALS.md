@@ -252,11 +252,14 @@
 
 ## Contact Information
 
-**Luana (Content Manager/Reviewer)**
-- Name: Luana
-- Email: [To be confirmed]
-- Phone: [To be confirmed]
-- Preferred contact method: [To be confirmed]
+**Luana Mettel (Content Manager/Reviewer)**
+- Name: Luana Mettel
+- Title: Chief Growth Officer
+- Email: lmettel@taylorserbin.com
+- Phone: (800) 351-3008
+- Office: 301 S. McDowell Street, Suite 1016, Charlotte, NC 28204
+- LinkedIn: https://www.linkedin.com/in/luanamettel/
+- Preferred contact method: [To be confirmed — email or phone?]
 - Response time: [To be confirmed]
 
 **Jason E. Taylor (Final Authority)**

@@ -12,7 +12,7 @@
 
 **Firm Main Page**
 - Name: Taylor|Serbin Injury Lawyers
-- URL: https://www.facebook.com/profile.php?id=61586215111345
+- URL: https://www.facebook.com/people/Taylor-Serbin-Injury-Lawyers/61586215111345/
 - Status: **NEW — Active, rebranded**
 - Content: Firm-wide posts, practice areas, team content
 
