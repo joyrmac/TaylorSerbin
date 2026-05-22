@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor | Serbin Instagram Story Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #1b5a3d 0%, #2d7a52 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            background: white;
+            border-left: 4px solid #1b5a3d;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #1b5a3d;
+            margin-bottom: 10px;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .template {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .template:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .template-preview {
+            aspect-ratio: 9 / 16;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        /* Template preview styles */
+        .style-1 {
+            background: linear-gradient(135deg, #1b5a3d 0%, #2d7a52 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .style-1 .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        .style-1 .headline {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .style-2 {
+            background: linear-gradient(135deg, #1b5a3d 0%, #2d7a52 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .style-2 .number {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .style-2 .headline {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .style-3 {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .style-3 .big-word {
+            font-size: 52px;
+            font-weight: 900;
+            color: #1b5a3d;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .style-3 .subtext {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .style-4 {
+            background: linear-gradient(135deg, #1b5a3d 0%, #2d7a52 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .style-4 .quote {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .style-4 .attribution {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .style-5 {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .style-5 .question {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #1b5a3d;
+        }
+
+        .style-5 .cta {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .style-6 {
+            background: linear-gradient(135deg, #1b5a3d 0%, #2d7a52 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .style-6 .date {
+            font-size: 14px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .style-6 .title {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .template-info {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .template-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .template-number {
+            font-size: 12px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .pillar-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pillar-firm {
+            background: #1b5a3d;
+            color: white;
+        }
+
+        .pillar-riders-life {
+            background: #d4a574;
+            color: #333;
+        }
+
+        .pillar-gourmet {
+            background: #b8860b;
+            color: white;
+        }
+
+        .pillar-cigars {
+            background: #8b6914;
+            color: white;
+        }
+
+        .pillar-wisdom {
+            background: #2d7a52;
+            color: white;
+        }
+
+        .template-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1b5a3d;
+            margin-bottom: 10px;
+        }
+
+        .template-copy {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .template-notes {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.4;
+        }
+
+        .template-notes strong {
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 2px solid #ddd;
+            margin-top: 60px;
+        }
+
+        .color-guide {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .color-guide h3 {
+            color: #1b5a3d;
+            margin-bottom: 20px;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 100px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .color-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .color-hex {
+            font-size: 11px;
+            color: #999;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taylor | Serbin Instagram Stories</h1>
+            <p>12 Template Layouts for Canva Implementation</p>
+        </header>
+
+        <div class="color-guide">
+            <h3>Brand Color Palette</h3>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #1b5a3d;"></div>
+                    <div class="color-name">Dark Green</div>
+                    <div class="color-hex">#1b5a3d</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #2d7a52;"></div>
+                    <div class="color-name">Brand Green</div>
+                    <div class="color-hex">#2d7a52</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #ffffff; border: 2px solid #ddd;"></div>
+                    <div class="color-name">White</div>
+                    <div class="color-hex">#ffffff</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #f0f0f0;"></div>
+                    <div class="color-name">Light Gray</div>
+                    <div class="color-hex">#f0f0f0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📋 How to Use This Guide</h3>
+            <p><strong>Each template shows:</strong> Layout structure, sample copy, design notes, and content pillar. Use these in Canva as your blueprint. Swap copy, adjust images, maintain the layout structure and color scheme.</p>
+        </div>
+
+        <div class="templates-grid">
+
+            <!-- Template 1 -->
+            <div class="template">
+                <div class="template-preview style-1">
+                    <div class="icon">📞</div>
+                    <div class="headline">ATTRACT NEW CLIENTS</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 01</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Icon + Headline</div>
+                    <div class="template-copy">ATTRACT NEW CLIENTS</div>
+                    <div class="template-notes"><strong>Layout:</strong> Icon (48-52px) + headline centered. Green gradient background. <strong>Variant:</strong> Can use other icons (scales, briefcase, motorcycle, etc.)</div>
+                </div>
+            </div>
+
+            <!-- Template 2 -->
+            <div class="template">
+                <div class="template-preview style-2">
+                    <div class="number">30+</div>
+                    <div class="headline">YEARS OF FIGHTING</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 02</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Number + Headline</div>
+                    <div class="template-copy">30+
+YEARS OF FIGHTING</div>
+                    <div class="template-notes"><strong>Layout:</strong> Large number (70px+) + headline. Works great for stats, milestones, authority markers. Can add image below headline.</div>
+                </div>
+            </div>
+
+            <!-- Template 3 -->
+            <div class="template">
+                <div class="template-preview style-3">
+                    <div class="big-word">REAL</div>
+                    <div class="subtext">Real motorcycles. Real risks. Real recovery.</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 03</div>
+                        <div class="pillar-badge pillar-riders-life">Rider's Life</div>
+                    </div>
+                    <div class="template-title">Big Word + Subtext</div>
+                    <div class="template-copy">REAL
+
+Real motorcycles. Real risks. Real recovery.</div>
+                    <div class="template-notes"><strong>Layout:</strong> Single word 50-60px, subtext 14-16px below. White background. Works for lifestyle, positioning, authenticity hooks.</div>
+                </div>
+            </div>
+
+            <!-- Template 4 -->
+            <div class="template">
+                <div class="template-preview style-4">
+                    <div class="quote">"The law isn't about winning. It's about protecting what matters."</div>
+                    <div class="attribution">— Jason E. Taylor</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 04</div>
+                        <div class="pillar-badge pillar-wisdom">Alligator Wisdom</div>
+                    </div>
+                    <div class="template-title">Quote + Attribution</div>
+                    <div class="template-copy">"The law isn't about winning. It's about protecting what matters."
+— Jason E. Taylor</div>
+                    <div class="template-notes"><strong>Layout:</strong> Quote (18-22px italic) + attribution (12px). Green gradient. Use for expertise/authority positioning. Can add quote marks icon.</div>
+                </div>
+            </div>
+
+            <!-- Template 5 -->
+            <div class="template">
+                <div class="template-preview style-5">
+                    <div class="question">HURT IN A MOTORCYCLE ACCIDENT?</div>
+                    <div class="cta">Swipe up for free legal guide</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 05</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Question + CTA</div>
+                    <div class="template-copy">HURT IN A MOTORCYCLE ACCIDENT?
+
+Swipe up for free legal guide</div>
+                    <div class="template-notes"><strong>Layout:</strong> Question (22-26px bold) + CTA (14px). Light gray background. Perfect for engagement, lead gen, swipe-up links.</div>
+                </div>
+            </div>
+
+            <!-- Template 6 -->
+            <div class="template">
+                <div class="template-preview style-6">
+                    <div class="date">May 2026</div>
+                    <div class="title">New Motorcycle Meetup</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 06</div>
+                        <div class="pillar-badge pillar-riders-life">Rider's Life</div>
+                    </div>
+                    <div class="template-title">Date + Title</div>
+                    <div class="template-copy">MAY 2026
+
+New Motorcycle Meetup</div>
+                    <div class="template-notes"><strong>Layout:</strong> Date (12-14px, all caps) + title (28-32px). Green gradient. Use for events, announcements, time-sensitive content.</div>
+                </div>
+            </div>
+
+            <!-- Template 7 -->
+            <div class="template">
+                <div class="template-preview style-1">
+                    <div class="headline">THE FIRST 24 HOURS MATTER</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 07</div>
+                        <div class="pillar-badge pillar-wisdom">Alligator Wisdom</div>
+                    </div>
+                    <div class="template-title">Bold Headline (Educational)</div>
+                    <div class="template-copy">THE FIRST 24 HOURS MATTER</div>
+                    <div class="template-notes"><strong>Layout:</strong> Large headline 36-40px, green gradient background. Use for tips, advice, educational content. Can add supporting image below.</div>
+                </div>
+            </div>
+
+            <!-- Template 8 -->
+            <div class="template">
+                <div class="template-preview style-3">
+                    <div class="big-word">EARNED</div>
+                    <div class="subtext">14 years building trust in the community. One case at a time.</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 08</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Authority Marker</div>
+                    <div class="template-copy">EARNED
+
+14 years building trust in the community. One case at a time.</div>
+                    <div class="template-notes"><strong>Layout:</strong> Single word + supporting statement. White background. Emphasizes credibility and proven track record.</div>
+                </div>
+            </div>
+
+            <!-- Template 9 -->
+            <div class="template">
+                <div class="template-preview style-4">
+                    <div class="quote">"Riding hard. Representing harder."</div>
+                    <div class="attribution">@jasontaylorthelitigator</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 09</div>
+                        <div class="pillar-badge pillar-riders-life">Rider's Life</div>
+                    </div>
+                    <div class="template-title">Personal Motto</div>
+                    <div class="template-copy">"Riding hard. Representing harder."
+@jasontaylorthelitigator</div>
+                    <div class="template-notes"><strong>Layout:</strong> Short, punchy quote + Instagram handle. Green gradient. Builds personal brand and authenticity.</div>
+                </div>
+            </div>
+
+            <!-- Template 10 -->
+            <div class="template">
+                <div class="template-preview style-5">
+                    <div class="question">WHAT'S YOUR MOVE?</div>
+                    <div class="cta">DM for a free consultation</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 10</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Engagement Question</div>
+                    <div class="template-copy">WHAT'S YOUR MOVE?
+
+DM for a free consultation</div>
+                    <div class="template-notes"><strong>Layout:</strong> Direct question + CTA. Light background. Great for encouraging story replies, comments, DMs.</div>
+                </div>
+            </div>
+
+            <!-- Template 11 -->
+            <div class="template">
+                <div class="template-preview style-2">
+                    <div class="number">100%</div>
+                    <div class="headline">COMMITTED TO YOUR CASE</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 11</div>
+                        <div class="pillar-badge pillar-firm">Firm Brand</div>
+                    </div>
+                    <div class="template-title">Percentage + Promise</div>
+                    <div class="template-copy">100%
+
+COMMITTED TO YOUR CASE</div>
+                    <div class="template-notes"><strong>Layout:</strong> Large percentage + bold headline. Green gradient. Use for commitments, guarantees, confidence building.</div>
+                </div>
+            </div>
+
+            <!-- Template 12 -->
+            <div class="template">
+                <div class="template-preview style-6">
+                    <div class="date">WEEKEND PLANS</div>
+                    <div class="title">Smoking Cigars at the Five Stand</div>
+                </div>
+                <div class="template-info">
+                    <div class="template-header">
+                        <div class="template-number">Template 12</div>
+                        <div class="pillar-badge pillar-cigars">Cigars & Five-Stand</div>
+                    </div>
+                    <div class="template-title">Lifestyle Announcement</div>
+                    <div class="template-copy">WEEKEND PLANS
+
+Smoking Cigars at the Five Stand</div>
+                    <div class="template-notes"><strong>Layout:</strong> Category + description. Green gradient. Perfect for lifestyle content, personal moments, behind-the-scenes preview.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+            <h3>✅ Implementation Checklist</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>Size:</strong> 1080x1920 pixels for Instagram Stories (will convert to 3:4 or 1:1 later)</li>
+                <li><strong>Typography:</strong> Clean sans-serif. Bold weights for headlines, regular for supporting text</li>
+                <li><strong>Colors:</strong> Use the green palette provided. Avoid red entirely—swap for green</li>
+                <li><strong>Images:</strong> Photo placement noted in each template. Quality images are key</li>
+                <li><strong>White space:</strong> Keep breathing room. Don't overcrowd</li>
+                <li><strong>Mobile-first:</strong> Test on phone. Text should be readable from 6 inches away</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Taylor | Serbin Injury Lawyers</strong></p>
+            <p>Personal Brand: @jasontaylorthelitigator | Phone: (800) 351-3008</p>
+            <p style="margin-top: 20px; font-size: 12px;">This reference document created for Canva implementation. Update as needed.</p>
+        </div>
+    </div>
+</body>
+</html>
